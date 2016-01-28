@@ -27,14 +27,14 @@ bool Enemy1::init()
 	}
 
 	//Load this object in from cocos studio.
-	/*auto rootNode = CSLoader::createNode("res/Wall.csb");
-	addChild(rootNode);*/
+	auto rootNode = CSLoader::createNode("res/Enemy1.csb");
+	addChild(rootNode);
 
 	auto winSize = Director::getInstance()->getVisibleSize();
-	this->setPosition(Vec2(0.0f, winSize.height*0.8));
+	this->setPosition(Vec2(0.0f, winSize.height*0.4));
 	this->scheduleUpdate();
 
-	//enemy1 = (Sprite*)rootNode->getChildByName("Wall");
+	enemy1 = (Sprite*)rootNode->getChildByName("Enemy1");
 
 	startXPosition = 400.0f;
 	startYPosition = enemy1->getPositionY();
@@ -42,7 +42,7 @@ bool Enemy1::init()
 
 	MovingLeft = false;
 
-	currentSpeed = 514.8f;
+	currentSpeed = 714.8f;
 
 	return true;
 }

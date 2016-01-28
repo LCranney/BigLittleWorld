@@ -27,14 +27,14 @@ bool Enemy2::init()
 	}
 
 	//Load this object in from cocos studio.
-	/*auto rootNode = CSLoader::createNode("res/Wall.csb");
-	addChild(rootNode);*/
+	auto rootNode = CSLoader::createNode("res/Enemy2.csb");
+	addChild(rootNode);
 
 	auto winSize = Director::getInstance()->getVisibleSize();
-	this->setPosition(Vec2(0.0f, winSize.height*0.8));
+	this->setPosition(Vec2(0.0f, winSize.height*0.4));
 	this->scheduleUpdate();
 
-	//enemy1 = (Sprite*)rootNode->getChildByName("Wall");
+	enemy2 = (Sprite*)rootNode->getChildByName("Enemy2");
 
 	startXPosition = 400.0f;
 	startYPosition = enemy2->getPositionY();

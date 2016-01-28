@@ -1,5 +1,5 @@
-#ifndef __CocosProject__ENEMY1__
-#define __CocosProject__ENEMY1__
+#ifndef __CocosProject__ENEMY2__
+#define __CocosProject__ENEMY2__
 
 #include "cocos2d.h"
 #include "ui/cocosGUI.h"

@@ -13,7 +13,17 @@ public:
     virtual bool init();
 
     // implement the "static create()" method manually
-    CREATE_FUNC(HelloWorld);
+	CREATE_FUNC(HelloWorld); 
+
+
+private:
+	Enemy1*			    enemy1Node;
+	Enemy2*				enemy2Node;
+	Enemy3*			    enemy3Node;
+	Enemy1*				enemy1;
+	Enemy2*				enemy2;
+	Enemy3*				enemy3;
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__

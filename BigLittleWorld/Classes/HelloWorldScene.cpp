@@ -1,7 +1,9 @@
 #include "HelloWorldScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-
+#include "Enemy1.h"
+#include "Enemy2.h"
+#include "Enemy3.h"
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -34,6 +36,21 @@ bool HelloWorld::init()
     auto rootNode = CSLoader::createNode("MainScene.csb");
 
     addChild(rootNode);
+
+	enemy1Node = (Enemy1*)rootNode->getChildByName("enemyTank");
+	enemy1 = Enemy1::create();
+	this->addChild(enemy1);
+
+
+	enemy2Node = (Enemy2*)rootNode->getChildByName("Wall");
+	enemy2 = Enemy2::create();
+	this->addChild(enemy2);
+
+
+	enemy3Node = (Enemy3*)rootNode->getChildByName("Barrel");
+	enemy3 = Enemy3::create();
+	this->addChild(enemy3);
+
 
     return true;
 }
