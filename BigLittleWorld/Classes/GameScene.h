@@ -2,7 +2,9 @@
 #define __GAMESCENE_SCENE_H__
 
 #include "GameManager.h"
-#include "Level.h"
+#include "Level1.h"
+#include "Level2.h"
+#include "Level3.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "cocos2d.h"
@@ -27,11 +29,9 @@ public:
 	CREATE_FUNC(GameScene);
 
 private:
-	Level* platform1;
-	Level* platform2;
-	Level* platform3;
-	Level* platform4;
-	Level* platform5;
+	Level1* platform1;
+	Level2* platform2;
+	Level3* platform3;
 };
 
 #endif // __ENEMY_H__

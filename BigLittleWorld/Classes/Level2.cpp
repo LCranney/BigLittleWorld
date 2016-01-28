@@ -1,4 +1,4 @@
-#include "Level1.h"
+#include "Level2.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -6,7 +6,7 @@ USING_NS_CC;
 
 using namespace cocostudio::timeline;
 
-Level1::Level1(cocos2d::Layer *layer)
+Level2::Level2(cocos2d::Layer *layer)
 {
 	visibleSize = Director::getInstance()->getVisibleSize();
 	origin = Director::getInstance()->getVisibleOrigin();
@@ -18,11 +18,11 @@ Level1::Level1(cocos2d::Layer *layer)
 	platform5 = Sprite::create("robot.png"); platform5->setPosition(0, 0); platform5->setScale(100);
 }
 
-Level1::~Level1()
+Level2::~Level2()
 {
 }
 
-void Level1::AddLevel(cocos2d::Layer *layer)
+void Level2::AddLevel(cocos2d::Layer *layer)
 {
 	layer->addChild(platform1, 100);
 	layer->addChild(platform2, 100);
@@ -31,7 +31,7 @@ void Level1::AddLevel(cocos2d::Layer *layer)
 	layer->addChild(platform5, 100);
 }
 
-void Level1::RemoveLevel(cocos2d::Layer *layer)
+void Level2::RemoveLevel(cocos2d::Layer *layer)
 {
 	layer->removeChild(platform1, 100);
 	layer->removeChild(platform2, 100);

@@ -20,6 +20,8 @@ private:
 	cocos2d::Sprite *platform3;
 	cocos2d::Sprite *platform4;
 	cocos2d::Sprite *platform5;
+
+	Level1 *level1;
 };
 
 #endif // __LEVEL1_SCENE_H__
