@@ -51,12 +51,8 @@ bool HelloWorld::init()
 
 
 	enemy2Node = (Enemy2*)rootNode->getChildByName("enemy2");
-	enemy2 = Enemy2::create(450.0f, 100.0f, 150.0f);
+	enemy2 = Enemy2::create(150.0f, 0.0f, 600.0f);
 	this->addChild(enemy2);
-
-
-	
-
 
     return true;
 }
