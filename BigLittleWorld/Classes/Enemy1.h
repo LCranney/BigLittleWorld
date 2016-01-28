@@ -13,8 +13,8 @@ public:
 	Enemy1();
 	~Enemy1();
 
-	virtual bool init() override;
-	static Enemy1* create();
+	virtual bool init(float SXPos, float SYPos, float Dis);
+	static Enemy1* create(float SXPos, float SYPos, float Dis);
 
 	void    update(float);
 
@@ -24,6 +24,7 @@ private:
 	float       startYPosition;
 	float       currentSpeed;
 	bool		MovingLeft;
+	float		distance;
 
 
 };

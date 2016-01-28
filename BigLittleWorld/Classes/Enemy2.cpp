@@ -3,10 +3,10 @@
 
 using namespace cocos2d;
 
-Enemy2* Enemy2::create()
+Enemy2* Enemy2::create(float SXPos, float SYPos, float Dis)
 {
 	Enemy2* myNode = new Enemy2();
-	if (myNode->init())
+	if (myNode->init(SXPos, SYPos, Dis))
 	{
 		myNode->autorelease();
 		return myNode;
@@ -19,7 +19,7 @@ Enemy2* Enemy2::create()
 	return myNode;
 }
 
-bool Enemy2::init()
+bool Enemy2::init(float SXPos, float SYPos, float Dis)
 {
 	if (!Node::init())
 	{
@@ -36,8 +36,9 @@ bool Enemy2::init()
 
 	enemy2 = (Sprite*)rootNode->getChildByName("Enemy2");
 
-	startXPosition = 400.0f;
-	startYPosition = enemy2->getPositionY();
+	startXPosition = SXPos;
+	startYPosition = SYPos;
+	distance = Dis;
 	enemy2->setPosition(startXPosition, startYPosition);
 
 	MovingDown = false;
@@ -72,12 +73,12 @@ void Enemy2::update(float deltaTime)
 		enemy2->setPositionY(enemy2->getPositionY() + (currentSpeed * deltaTime));
 	}
 
-	if (enemy2->getPositionY() > startXPosition + 100.0f)
+	if (enemy2->getPositionY() > startYPosition + distance)
 	{
 		MovingDown = true;
 	}
 
-	if (enemy2->getPositionY() < startXPosition - 700.0f)
+	if (enemy2->getPositionY() < startYPosition - distance)
 	{
 		MovingDown = false;
 	}

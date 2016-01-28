@@ -3,10 +3,10 @@
 
 using namespace cocos2d;
 
-Enemy1* Enemy1::create()
+Enemy1* Enemy1::create(float SXPos, float SYPos, float Dis)
 {
 	Enemy1* myNode = new Enemy1();
-	if (myNode->init())
+	if (myNode->init(SXPos, SYPos, Dis))
 	{
 		myNode->autorelease();
 		return myNode;
@@ -16,10 +16,11 @@ Enemy1* Enemy1::create()
 		CC_SAFE_DELETE(myNode);
 		return nullptr;
 	}
+
 	return myNode;
 }
 
-bool Enemy1::init()
+bool Enemy1::init(float SXPos, float SYPos, float Dis)
 {
 	if (!Node::init())
 	{
@@ -36,13 +37,15 @@ bool Enemy1::init()
 
 	enemy1 = (Sprite*)rootNode->getChildByName("Enemy1");
 
-	startXPosition = 400.0f;
-	startYPosition = enemy1->getPositionY();
+	startXPosition = SXPos;
+	startYPosition = SYPos;
+	distance = Dis;
 	enemy1->setPosition(startXPosition, startYPosition);
 
 	MovingLeft = false;
 
 	currentSpeed = 714.8f;
+	
 
 	return true;
 }
@@ -72,12 +75,12 @@ void Enemy1::update(float deltaTime)
 		enemy1->setPositionX(enemy1->getPositionX() + (currentSpeed * deltaTime));
 	}
 
-	if (enemy1->getPositionX() > startXPosition + 400.0f)
+	if (enemy1->getPositionX() > startXPosition + distance)
 	{
 		MovingLeft = true;
 	}
 
-	if (enemy1->getPositionX() < startXPosition - 400.0f)
+	if (enemy1->getPositionX() < startXPosition - distance)
 	{
 		MovingLeft = false;
 	}

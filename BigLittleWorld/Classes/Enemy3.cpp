@@ -77,7 +77,7 @@ void Enemy3::update(float deltaTime)
 	//	MovingLeft = true;
 	//}
 
-	if (enemy3->getPositionY() < startXPosition - 0.0f)
+	if (enemy3->getPositionY() < startYPosition - 0.0f)
 	{
 		MovingUp = false;
 	}
