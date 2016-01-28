@@ -1,15 +1,15 @@
-#ifndef __LEVEL_SCENE_H__
-#define __LEVEL_SCENE_H__
+#ifndef __LEVEL1_SCENE_H__
+#define __LEVEL1_SCENE_H__
 
 #include "cocos2d.h"
 
-class Level
+class Level1
 {
 public:
-	Level(cocos2d::Layer *layer);
-	void AddSprite(cocos2d::Layer *layer);
-	void RemoveSprite(cocos2d::Layer *layer);
-	~Level();
+	Level1(cocos2d::Layer *layer);
+	void AddLevel(cocos2d::Layer *layer);
+	void RemoveLevel(cocos2d::Layer *layer);
+	~Level1();
 
 private:
 	cocos2d::Size visibleSize;
@@ -22,4 +22,4 @@ private:
 	cocos2d::Sprite *platform5;
 };
 
-#endif // __ENEMY_H__
+#endif // __LEVEL1_SCENE_H__

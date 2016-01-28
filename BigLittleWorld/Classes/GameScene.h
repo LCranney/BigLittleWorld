@@ -2,6 +2,7 @@
 #define __GAMESCENE_SCENE_H__
 
 #include "GameManager.h"
+#include "Level.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "cocos2d.h"
@@ -24,6 +25,13 @@ public:
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);
+
+private:
+	Level* platform1;
+	Level* platform2;
+	Level* platform3;
+	Level* platform4;
+	Level* platform5;
 };
 
 #endif // __ENEMY_H__
