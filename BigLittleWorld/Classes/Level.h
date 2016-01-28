@@ -7,8 +7,8 @@ class Level
 {
 public:
 	Level(cocos2d::Layer *layer);
-	void AddEnemy(cocos2d::Layer *layer);
-	void RemoveEnemy(cocos2d::Layer *layer);
+	void AddSprite(cocos2d::Layer *layer);
+	void RemoveSprite(cocos2d::Layer *layer);
 	~Level();
 
 private:

@@ -11,21 +11,19 @@ Level::Level(cocos2d::Layer *layer)
 	visibleSize = Director::getInstance()->getVisibleSize();
 	origin = Director::getInstance()->getVisibleOrigin();
 
-	platform1 = Sprite::create("robot.png");
-	platform1->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-}
-
-void Level::AddEnemy(cocos2d::Layer *layer)
-{
-	layer->addChild(platform1, 100);
-}
-
-void Level::RemoveEnemy(cocos2d::Layer *layer)
-{
-	layer->removeChild(platform1, 100);
+	platform1 = Sprite::create("robot.png"); platform1->setPosition(0, 0); platform1->setScale(100); 
 }
 
 Level::~Level()
 {
+}
 
+void Level::AddSprite(cocos2d::Layer *layer)
+{
+	layer->addChild(platform1, 100);
+}
+
+void Level::RemoveSprite(cocos2d::Layer *layer)
+{
+	layer->removeChild(platform1, 100);
 }
