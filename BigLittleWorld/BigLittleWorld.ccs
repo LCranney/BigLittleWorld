@@ -5,6 +5,8 @@
       <RootFolder Name=".">
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="HelloWorld.png" />
+        <Image Name="Ball.png" />
+        <Image Name="Platform.jpg" />
       </RootFolder>
     </Group>
   </SolutionFolder>

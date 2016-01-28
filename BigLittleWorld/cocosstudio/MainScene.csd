@@ -6,31 +6,27 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="Default" ActionTag="953446860" Tag="5" IconVisible="False" ctype="SpriteObjectData">
-            <Size X="960.0000" Y="640.0000" />
+          <AbstractNodeData Name="Platform" ActionTag="-150114599" Tag="4" IconVisible="False" LeftMargin="332.0000" RightMargin="328.0000" TopMargin="497.0000" BottomMargin="133.0000" ctype="SpriteObjectData">
+            <Size X="300.0000" Y="10.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="480.0000" Y="320.0000" />
+            <Position X="482.0000" Y="138.0000" />
+            <Scale ScaleX="1.9600" ScaleY="2.8000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5021" Y="0.2156" />
+            <PreSize X="0.3125" Y="0.0156" />
+            <FileData Type="Normal" Path="Platform.jpg" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Ball" ActionTag="654561076" Tag="5" IconVisible="False" LeftMargin="460.0000" RightMargin="450.0000" TopMargin="136.0000" BottomMargin="454.0000" ctype="SpriteObjectData">
+            <Size X="50.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="485.0000" Y="479.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="HelloWorld.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Button_1" ActionTag="1063852282" Tag="3" IconVisible="False" LeftMargin="463.0000" RightMargin="451.0000" TopMargin="282.0006" BottomMargin="321.9994" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="46.0000" Y="36.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="486.0000" Y="339.9994" />
-            <Scale ScaleX="2.2609" ScaleY="2.4444" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5063" Y="0.5312" />
-            <PreSize X="0.0479" Y="0.0562" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <PrePosition X="0.5052" Y="0.7484" />
+            <PreSize X="0.0521" Y="0.0781" />
+            <FileData Type="Normal" Path="Ball.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>
