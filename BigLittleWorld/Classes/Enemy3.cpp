@@ -36,8 +36,8 @@ bool Enemy3::init()
 
 	enemy3 = (Sprite*)rootNode->getChildByName("water");
 
-	startXPosition = 400.0f;
-	startYPosition = enemy3->getPositionY();
+	startXPosition = 570.0f;
+	startYPosition = -50.0f;
 	enemy3->setPosition(startXPosition, startYPosition);
 
 	MovingUp = false;
@@ -63,23 +63,24 @@ void Enemy3::update(float deltaTime)
 	//Get the window size.
 	auto  winSize = Director::getInstance()->getVisibleSize();
 		
-	if (MovingUp == false)
-	{
-		enemy3->setPositionY(enemy3->getPositionY() + (currentSpeed * deltaTime));
-	}
+	enemy3->setPositionY(enemy3->getPositionY() + (currentSpeed * deltaTime));
+	//if (MovingUp == false)
+	//{
+	//	
+	//}
 	//else
 	//{
-	//	barrel->setPositionY(barrel->getPositionY() + (currentSpeed * deltaTime));
+	//	enemy3->setPositionY(enemy3->getPositionY() - (currentSpeed * deltaTime));
 	//}
 
-	//if (barrel->getPositionY() > startXPosition + 400.0f)
+	//if (enemy3->getPositionY() > startYPosition + 400.0f)
 	//{
-	//	MovingLeft = true;
+	//	MovingUp = true;
 	//}
 
-	if (enemy3->getPositionY() < startXPosition - 0.0f)
-	{
-		MovingUp = false;
-	}
+	//if (enemy3->getPositionY() < startYPosition - 0.0f)
+	//{
+	//	MovingUp = false;
+	//}
 			
 }

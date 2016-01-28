@@ -3,6 +3,10 @@
 
 #include "cocos2d.h"
 
+class Enemy1;
+class Enemy2;
+class Enemy3;
+
 class HelloWorld : public cocos2d::Layer
 {
 public:

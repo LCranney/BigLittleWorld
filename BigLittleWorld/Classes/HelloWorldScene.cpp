@@ -36,6 +36,10 @@ bool HelloWorld::init()
     auto rootNode = CSLoader::createNode("MainScene.csb");
 
     addChild(rootNode);
+	
+	enemy3Node = (Enemy3*)rootNode->getChildByName("Barrel");
+	enemy3 = Enemy3::create();
+	this->addChild(enemy3);
 
 	enemy1Node = (Enemy1*)rootNode->getChildByName("enemyTank");
 	enemy1 = Enemy1::create();
@@ -47,9 +51,7 @@ bool HelloWorld::init()
 	this->addChild(enemy2);
 
 
-	enemy3Node = (Enemy3*)rootNode->getChildByName("Barrel");
-	enemy3 = Enemy3::create();
-	this->addChild(enemy3);
+	
 
 
     return true;
