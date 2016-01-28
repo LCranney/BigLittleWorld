@@ -16,6 +16,10 @@ private:
 	cocos2d::Vec2 origin;
 
 	cocos2d::Sprite *platform1;
+	cocos2d::Sprite *platform2;
+	cocos2d::Sprite *platform3;
+	cocos2d::Sprite *platform4;
+	cocos2d::Sprite *platform5;
 };
 
 #endif // __ENEMY_H__
