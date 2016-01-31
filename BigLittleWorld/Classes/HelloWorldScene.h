@@ -13,23 +13,20 @@ public:
 
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
-
-
-	this->ScheduleUpdate();
+	
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 
-	bool BoxtoBoxCollision(Sprite* sprite1, Sprite* sprite2);
-	bool BoxtoCircleCollision(Sprite* sprite1, Sprite* sprite2);
-	bool CircletoCircleCollision(Sprite* sprite1, Sprite* sprite2);
-
 	void update(float delta);
+
+	bool BoxtoBoxCollision(Sprite* sprite1, Sprite* sprite2);
+	bool BoxtoCircleCollision(Sprite* Box, Sprite* Circle);
+	bool CircletoCircleCollision(Sprite* sprite1, Sprite* sprite2);
 
 private:
 
 	Sprite* Ball;
 	Sprite* Platform;
-
 };
 
 #endif // __HELLOWORLD_SCENE_H__

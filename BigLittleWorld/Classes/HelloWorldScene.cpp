@@ -33,20 +33,34 @@ bool HelloWorld::init()
     
     auto rootNode = CSLoader::createNode("MainScene.csb");
 
+	this->scheduleUpdate();
+
     addChild(rootNode);
 
 	Ball = (Sprite*)rootNode->getChildByName("Ball");
 	Platform = (Sprite*)rootNode->getChildByName("Platform");
+	Platform->setRotation(1);
 
-	auto physicsbody = PhysicsBody::createBox(Size(Ball->getBoundingBox().size.width, Ball->getBoundingBox().size.height), PhysicsMaterial(0.1f, 1.0f, 0.0f));
+	auto physicsbody = PhysicsBody::createCircle(Ball->getBoundingBox().size.width / 2, PhysicsMaterial(0.4f, 1.0f, 0.0f));
 	Ball->setPhysicsBody(physicsbody);
 
-	physicsbody = PhysicsBody::createBox(Size(Platform->getBoundingBox().size.width, Platform->getBoundingBox().size.height), PhysicsMaterial(0.1f, 1.0f, 0.0f));
+	physicsbody = PhysicsBody::createBox(Size(Platform->getBoundingBox().size.width / 2, Platform->getBoundingBox().size.height / 4), PhysicsMaterial(0.1f, 0.5f, 0.0f));
 	physicsbody->setDynamic(false);
 	Platform->setPhysicsBody(physicsbody);
-	
 
     return true;
+}
+
+void HelloWorld::update(float delta)
+{
+	if (this->BoxtoCircleCollision(Platform, Ball))
+	{
+		Ball->setVisible(false);
+	}
+	else
+	{
+		Ball->setVisible(true);
+	}
 }
 
 bool HelloWorld::BoxtoBoxCollision(Sprite* sprite1, Sprite* sprite2)
@@ -58,9 +72,9 @@ bool HelloWorld::BoxtoBoxCollision(Sprite* sprite1, Sprite* sprite2)
 	return false;
 }
 
-bool HelloWorld::BoxtoCircleCollision(Sprite* sprite1, Sprite* sprite2)
+bool HelloWorld::BoxtoCircleCollision(Sprite* Box, Sprite* Circle)
 {
-	if (sprite1->getBoundingBox().intersectsCircle(sprite1->getPosition(), sprite1->getBoundingBox().size.height / 2))
+	if (Box->getBoundingBox().intersectsCircle(Circle->getPosition(), Circle->getBoundingBox().size.height / 2))
 	{
 		return true;
 	}
