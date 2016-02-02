@@ -36,10 +36,6 @@ bool HelloWorld::init()
     auto rootNode = CSLoader::createNode("MainScene.csb");
 
     addChild(rootNode);
-	
-	enemy3Node = (Enemy3*)rootNode->getChildByName("enemy3");
-	enemy3 = Enemy3::create();
-	this->addChild(enemy3);
 
 	enemy1Node = (Enemy1*)rootNode->getChildByName("enemy1");
 	enemy1 = Enemy1::create(450.0f, 300.0f, 100.0f);
@@ -49,10 +45,13 @@ bool HelloWorld::init()
 	enemy1a = Enemy1::create(450.0f, 100.0f, 150.0f);
 	this->addChild(enemy1a);
 
-
 	enemy2Node = (Enemy2*)rootNode->getChildByName("enemy2");
 	enemy2 = Enemy2::create(150.0f, 0.0f, 600.0f);
 	this->addChild(enemy2);
+
+	enemy3Node = (Enemy3*)rootNode->getChildByName("enemy3");
+	enemy3 = Enemy3::create();
+	this->addChild(enemy3);
 
     return true;
 }

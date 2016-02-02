@@ -40,8 +40,6 @@ bool Enemy3::init()
 	startYPosition = -50.0f;
 	enemy3->setPosition(startXPosition, startYPosition);
 
-	MovingUp = false;
-
 	currentSpeed = 10.8f;
 
 	return true;
@@ -62,24 +60,6 @@ void Enemy3::update(float deltaTime)
 {
 	//Get the window size.
 	auto  winSize = Director::getInstance()->getVisibleSize();
-		
-	if (MovingUp == false)
-	{
-		enemy3->setPositionY(enemy3->getPositionY() + (currentSpeed * deltaTime));
-	}
-	//else
-	//{
-	//	barrel->setPositionY(barrel->getPositionY() + (currentSpeed * deltaTime));
-	//}
 
-	//if (barrel->getPositionY() > startXPosition + 400.0f)
-	//{
-	//	MovingLeft = true;
-	//}
-
-	if (enemy3->getPositionY() < startYPosition - 0.0f)
-	{
-		MovingUp = false;
-	}
-			
+	enemy3->setPositionY(enemy3->getPositionY() + (currentSpeed * deltaTime));
 }
