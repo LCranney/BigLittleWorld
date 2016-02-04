@@ -19,6 +19,24 @@ public:
 	void cUncommon();
 	void cRare();
 
+
+	//Temporary Variables
+	//TEMP scoreing
+	int TEMP_score;
+	int TEMP_pointValueCommon;
+	int TEMP_pointValueUncommon;
+	int TEMP_pointValueRare;
+	//TEMP collisions
+	int TEMP_collisionValue;
+	int TEMP_playerProtectionCount;
+	bool TEMP_playerProtection;
+	//TEMP Lives
+	int TEMP_lifeValue;
+	int TEMP_playerLives;
+	//TEMP speed
+	int TEMP_speedBoost;
+	int TEMP_playerSpeed;
+
 };
 
 #endif // __PickMeUp_H__
