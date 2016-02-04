@@ -37,12 +37,18 @@ bool HelloWorld::init()
 
     addChild(rootNode);
 
+	player = (Sprite*)rootNode->getChildByName("Player");
+	ending = (Sprite*)rootNode->getChildByName("ending");
+	wall1 = (Sprite*)rootNode->getChildByName("wall1");
+	wall2 = (Sprite*)rootNode->getChildByName("wall2");
+	wall3 = (Sprite*)rootNode->getChildByName("wall3");
+
 	enemy1Node = (Enemy1*)rootNode->getChildByName("enemy1");
 	enemy1 = Enemy1::create(450.0f, 300.0f, 100.0f);
 	this->addChild(enemy1);
 
 	enemy1aNode = (Enemy1*)rootNode->getChildByName("enemy1");
-	enemy1a = Enemy1::create(450.0f, 100.0f, 150.0f);
+	enemy1a = Enemy1::create(650.0f, 200.0f, 150.0f);
 	this->addChild(enemy1a);
 
 	enemy2Node = (Enemy2*)rootNode->getChildByName("enemy2");

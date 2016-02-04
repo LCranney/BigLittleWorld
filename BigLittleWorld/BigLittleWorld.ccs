@@ -10,8 +10,12 @@
         <Project Name="Enemy2.csd" Type="Node" />
         <Project Name="Enemy3.csd" Type="Node" />
         <Image Name="red2.png" />
-        <Image Name="water.png" />
         <Image Name="blue.png" />
+        <Image Name="background.jpg" />
+        <Image Name="darkgray.png" />
+        <Image Name="purple.png" />
+        <Image Name="orange.png" />
+        <Image Name="black square.jpg" />
       </RootFolder>
     </Group>
   </SolutionFolder>
