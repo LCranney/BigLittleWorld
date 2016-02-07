@@ -26,7 +26,8 @@ public:
 private:
 
 	Sprite* Ball;
-	Sprite* Platform;
+	Sprite* Platform[5];
+	PhysicsBody* physicsbody[6];
 };
 
 #endif // __HELLOWORLD_SCENE_H__
