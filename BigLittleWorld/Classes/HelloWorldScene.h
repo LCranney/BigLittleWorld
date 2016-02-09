@@ -21,11 +21,6 @@ public:
 
 
 private:
-	cocos2d::Sprite*	player;
-	cocos2d::Sprite*	ending;
-	cocos2d::Sprite*	wall1;
-	cocos2d::Sprite*	wall2;
-	cocos2d::Sprite*	wall3;
 	Enemy1*			    enemy1Node;
 	Enemy1*				enemy1aNode;
 	Enemy2*				enemy2Node;

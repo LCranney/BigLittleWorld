@@ -25,6 +25,8 @@ private:
 	float       currentSpeed;
 	bool		MovingLeft;
 	float		distance;
+	int movement;
+	int startMovement;
 
 
 };
