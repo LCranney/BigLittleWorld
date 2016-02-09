@@ -32,6 +32,83 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="T_eCommon" ActionTag="1311250275" Tag="4" IconVisible="False" LeftMargin="766.0004" RightMargin="143.9996" TopMargin="71.9961" BottomMargin="518.0039" ctype="SpriteObjectData">
+            <Size X="50.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="791.0004" Y="543.0039" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8240" Y="0.8484" />
+            <PreSize X="0.0521" Y="0.0781" />
+            <FileData Type="Normal" Path="eCommon.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="T_eRare" ActionTag="-471520537" Tag="5" IconVisible="False" LeftMargin="764.0000" RightMargin="146.0000" TopMargin="131.9165" BottomMargin="458.0835" ctype="SpriteObjectData">
+            <Size X="50.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="789.0000" Y="483.0835" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8219" Y="0.7548" />
+            <PreSize X="0.0521" Y="0.0781" />
+            <FileData Type="Normal" Path="eRare.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="T_eUncommon" ActionTag="2115527331" Tag="6" IconVisible="False" LeftMargin="763.0000" RightMargin="147.0000" TopMargin="198.9165" BottomMargin="391.0835" ctype="SpriteObjectData">
+            <Size X="50.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="788.0000" Y="416.0835" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8208" Y="0.6501" />
+            <PreSize X="0.0521" Y="0.0781" />
+            <FileData Type="Normal" Path="eUncommon.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="T_Glue" ActionTag="-125690619" Tag="8" IconVisible="False" LeftMargin="768.0000" RightMargin="146.0000" TopMargin="267.9165" BottomMargin="326.0835" ctype="SpriteObjectData">
+            <Size X="50.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="791.0000" Y="349.0835" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8240" Y="0.5454" />
+            <PreSize X="0.0479" Y="0.0719" />
+            <FileData Type="Normal" Path="Glue.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="T_Shield" ActionTag="-1365021423" Tag="9" IconVisible="False" LeftMargin="845.0000" RightMargin="69.0000" TopMargin="75.9165" BottomMargin="518.0835" ctype="SpriteObjectData">
+            <Size X="50.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="868.0000" Y="541.0835" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9042" Y="0.8454" />
+            <PreSize X="0.0479" Y="0.0719" />
+            <FileData Type="Normal" Path="Shield.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="T_Slingshot" ActionTag="609738856" Tag="10" IconVisible="False" LeftMargin="843.0000" RightMargin="71.0000" TopMargin="128.9165" BottomMargin="465.0835" ctype="SpriteObjectData">
+            <Size X="50.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="866.0000" Y="488.0835" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9021" Y="0.7626" />
+            <PreSize X="0.0479" Y="0.0719" />
+            <FileData Type="Normal" Path="Slingshot.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="T_WoL" ActionTag="665674880" Tag="11" IconVisible="False" LeftMargin="838.0000" RightMargin="76.0000" TopMargin="198.9165" BottomMargin="395.0835" ctype="SpriteObjectData">
+            <Size X="50.0000" Y="50.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="861.0000" Y="418.0835" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8969" Y="0.6533" />
+            <PreSize X="0.0479" Y="0.0719" />
+            <FileData Type="Normal" Path="WingsOfLife.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

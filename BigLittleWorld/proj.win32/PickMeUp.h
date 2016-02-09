@@ -36,6 +36,8 @@ public:
 	//TEMP speed
 	int TEMP_speedBoost;
 	int TEMP_playerSpeed;
+	//TEMP Sticky
+
 
 };
 

@@ -5,6 +5,13 @@
       <RootFolder Name=".">
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="HelloWorld.png" />
+        <Image Name="eCommon.png" />
+        <Image Name="eRare.png" />
+        <Image Name="eUncommon.png" />
+        <Image Name="Glue.png" />
+        <Image Name="Shield.png" />
+        <Image Name="Slingshot.png" />
+        <Image Name="WingsOfLife.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

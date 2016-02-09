@@ -46,9 +46,16 @@ void PickMeUp::WingsOfLife()
 //Allows player to stick to walls
 void PickMeUp::Glue()
 {
+	/*
+	Not sure how just yet but, once activated  this method will make it so that once the player collides with a wall
+	this method stops the player where the collision happened and disables gravity so that the player sits on the wall to be moved 
+	again when ready. 
+	As soon as the player moves gravity is re-enabled and normal richochets occur off walls.
+	*/
+
 	//Has to be Activated
 }
-//Speed boost, fly throw hostiles, kill flown through hostiles, further distance
+//Speed boost, fly through hostiles, kill flown through hostiles, further distance
 void PickMeUp::Slingshot()
 {
 	TEMP_playerProtection = true;
