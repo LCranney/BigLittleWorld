@@ -3,6 +3,9 @@
 #include "GameOverScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "Enemy1.h"
+#include "Enemy2.h"
+#include "Enemy3.h"
 
 USING_NS_CC;
 
@@ -39,6 +42,11 @@ bool GameScene::init()
 
 	auto backgroundSprite = Sprite::create("GameScene.png");
 	backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+	
+	enemy1 = Enemy1::create(450.0f, 100.0f, 100.0f);
+	enemy1a = Enemy1::create(600.0f, 50.0f, 150.0f);
+	enemy2 = Enemy2::create(750.0f, 30.0f, 100.0f);
+	enemy3 = Enemy3::create();
 
 	this->addChild(backgroundSprite);
 
@@ -52,6 +60,10 @@ bool GameScene::init()
 	edgeNode->setPhysicsBody(edgeBody);
 
 	this->addChild(edgeNode);
+	this->addChild(enemy2);	
+	this->addChild(enemy1a);	
+	this->addChild(enemy1);
+	this->addChild(enemy3);
 
 	auto contactListener = EventListenerPhysicsContact::create();
 	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
@@ -64,13 +76,6 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact)
 {
 	PhysicsBody *a = contact.getShapeA()->getBody();
 	PhysicsBody *b = contact.getShapeB()->getBody();
-
-	if ((BALL_COLLISION_BITMASK == a->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == b->getCollisionBitmask()));
-	{
-		auto scene = GameOverScene::createScene();
-
-		Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
-	}
 
 	return true;
 }

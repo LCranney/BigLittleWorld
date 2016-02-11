@@ -3,10 +3,6 @@
 
 #include "cocos2d.h"
 
-class Enemy1;
-class Enemy2;
-class Enemy3;
-
 class HelloWorld : public cocos2d::Layer
 {
 public:
@@ -21,14 +17,6 @@ public:
 
 
 private:
-	Enemy1*			    enemy1Node;
-	Enemy1*				enemy1aNode;
-	Enemy2*				enemy2Node;
-	Enemy3*			    enemy3Node;
-	Enemy1*				enemy1;
-	Enemy1*				enemy1a;
-	Enemy2*				enemy2;
-	Enemy3*				enemy3;
 
 	void GoToGameScene(cocos2d::Ref *sender);
 	void GoToHelpScene(cocos2d::Ref *sender);

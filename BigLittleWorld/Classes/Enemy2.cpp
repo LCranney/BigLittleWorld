@@ -43,7 +43,7 @@ bool Enemy2::init(float SXPos, float SYPos, float Dis)
 
 	MovingDown = false;
 
-	currentSpeed = 514.8f;
+	currentSpeed = 214.8f;
 
 	return true;
 }

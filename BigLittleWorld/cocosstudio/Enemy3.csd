@@ -6,11 +6,11 @@
       <ObjectData Name="Node" Tag="4" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="water" ActionTag="-1523198226" Tag="6" IconVisible="False" LeftMargin="-32.0132" RightMargin="-31.9868" TopMargin="-0.0001" BottomMargin="-63.9999" ctype="SpriteObjectData">
+          <AbstractNodeData Name="water" ActionTag="-1523198226" Tag="6" IconVisible="False" LeftMargin="-32.0083" RightMargin="-31.9917" TopMargin="-0.0032" BottomMargin="-63.9968" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="-0.0132" Y="0.0001" />
-            <Scale ScaleX="20.9183" ScaleY="9.8500" />
+            <Position X="-0.0083" Y="0.0032" />
+            <Scale ScaleX="8.9350" ScaleY="4.5726" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
