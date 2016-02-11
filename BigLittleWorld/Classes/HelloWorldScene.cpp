@@ -37,10 +37,10 @@ bool HelloWorld::init()
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("MainScene.csb");
+    /*auto rootNode = CSLoader::createNode("MainScene.csb");
 
     addChild(rootNode);
-
+*/
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
