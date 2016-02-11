@@ -30,6 +30,10 @@ private:
 	Enemy2*				enemy2;
 	Enemy3*				enemy3;
 
+	void GoToGameScene(cocos2d::Ref *sender);
+	void GoToHelpScene(cocos2d::Ref *sender);
+	void GoToLevelScene(cocos2d::Ref *sender);
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__
