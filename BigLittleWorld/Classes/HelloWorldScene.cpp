@@ -42,11 +42,11 @@ bool HelloWorld::init()
 	this->addChild(enemy1);
 
 	enemy1aNode = (Enemy1*)rootNode->getChildByName("enemy1");
-	enemy1a = Enemy1::create(650.0f, -100.0f, 150.0f);
+	enemy1a = Enemy1::create(650.0f, 50.0f, 150.0f);
 	this->addChild(enemy1a);
 
 	enemy2Node = (Enemy2*)rootNode->getChildByName("enemy2");
-	enemy2 = Enemy2::create(150.0f, 0.0f, 600.0f);
+	enemy2 = Enemy2::create(150.0f, 0.0f, 100.0f);
 	this->addChild(enemy2);
 
 	enemy3Node = (Enemy3*)rootNode->getChildByName("enemy3");
