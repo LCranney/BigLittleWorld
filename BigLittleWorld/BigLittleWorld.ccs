@@ -5,6 +5,15 @@
       <RootFolder Name=".">
         <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="HelloWorld.png" />
+        <Project Name="Enemy1.csd" Type="Node" />
+        <Image Name="green.png" />
+        <Project Name="Enemy2.csd" Type="Node" />
+        <Project Name="Enemy3.csd" Type="Node" />
+        <Image Name="red2.png" />
+        <Image Name="blue.png" />
+        <Image Name="darkgray.png" />
+        <Image Name="purple.png" />
+        <Image Name="orange.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>
