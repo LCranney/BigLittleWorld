@@ -35,4 +35,9 @@ bool GameScene::init()
 	auto rootNode = CSLoader::createNode("GameScene.csb");
 
 	addChild(rootNode);
+
+	AddLevel = new Level1(this);
+	AddLevel->AddLevel(this);
+
+	return true;
 }
