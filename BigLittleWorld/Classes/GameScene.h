@@ -6,7 +6,6 @@
 class Enemy1;
 class Enemy2;
 class Enemy3;
-class Level1;
 
 class GameScene : public cocos2d::Layer
 {

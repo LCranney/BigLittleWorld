@@ -6,7 +6,6 @@
 #include "Enemy1.h"
 #include "Enemy2.h"
 #include "Enemy3.h"
-#include "Level1.h"
 
 USING_NS_CC;
 
