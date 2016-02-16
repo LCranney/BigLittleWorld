@@ -6,7 +6,6 @@
 #include "Enemy1.h"
 #include "Enemy2.h"
 #include "Enemy3.h"
-#include "Level1.h"
 
 USING_NS_CC;
 
@@ -65,9 +64,6 @@ bool GameScene::init()
 	this->addChild(enemy1a);	
 	this->addChild(enemy1);
 	this->addChild(enemy3);
-
-	AddLevel = new Level1(this);
-	AddLevel->AddLevel(this);
 
 	auto contactListener = EventListenerPhysicsContact::create();
 	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);

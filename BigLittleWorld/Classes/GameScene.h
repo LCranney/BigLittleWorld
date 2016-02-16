@@ -6,7 +6,6 @@
 class Enemy1;
 class Enemy2;
 class Enemy3;
-class Level1;
 
 class GameScene : public cocos2d::Layer
 {
@@ -35,7 +34,6 @@ private:
 	Enemy1*				enemy1a;
 	Enemy2*				enemy2;
 	Enemy3*				enemy3;
-	Level1* AddLevel;
 
 };
 

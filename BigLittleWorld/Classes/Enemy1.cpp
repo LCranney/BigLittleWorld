@@ -117,17 +117,14 @@ void Enemy1::update(float deltaTime)
 	{
 		enemy1->setPositionX(enemy1->getPositionX() - (currentSpeed * deltaTime));
 	}
-
 	else
 	{
 		enemy1->setPositionX(enemy1->getPositionX() + (currentSpeed * deltaTime));
 	}
-
 	if (enemy1->getPositionX() > startXPosition + distance)
 	{
 		MovingLeft = true;
 	}
-
 	if (enemy1->getPositionX() < startXPosition - distance)
 	{
 		MovingLeft = false;
