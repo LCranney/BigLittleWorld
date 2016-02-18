@@ -56,6 +56,13 @@ void AppDelegate::applicationDidEnterBackground() {
 
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+	//=================================================================//
+	//=================================================================//
+	/*
+	FUTURE CHRIS YOU NEED TO KNOW THIS
+	Add all the PAUSE functions to stop SFX and Music that is currently running
+	this will stop it all when the applicaiton goes to sleep, phone locked, app minimised etc.
+	*/
 }
 
 // this function will be called when the app is active again
@@ -64,4 +71,10 @@ void AppDelegate::applicationWillEnterForeground() {
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+	//=================================================================//
+	//=================================================================//
+	/*
+	FUTURE CHRIS YOU NEED TO KNOW THIS
+	Add all the RESUME funcitons to continue playing any SFX and music.
+	*/
 }

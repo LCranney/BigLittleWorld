@@ -1,29 +1,32 @@
 #pragma once
+//INCLUDES
+#include "cocos2d.h"
+#include "SimpleAudioEngine.h"
+//CLASS START
 class SoundManager
 {
 public:
-	//CON / dCON
+//CON / dCON
 	SoundManager();
 	~SoundManager();
-	//bool INIT for Pre-Loading audio
+//bool INIT for Pre-Loading audio
 	virtual bool init(void);
-	//PLAY SFX METHODS
-	/*
+//PLAY SFX METHODS
 	//Base SFX
-	void playSFXMenuClick;
-	void playSFXCollectPickup;
-	void playSFXKillHostile;
-	void playSFXDeath;
-	void playSFXStickToWall;
-	void playSFXRicochet;
-	void playSFXMovement;
+	void playSFXMenuClick();
+	//void playSFXCollectPickup();
+	//void playSFXKillHostile();
+	//void playSFXDeath();
+	//void playSFXStickToWall();
+	//void playSFXRicochet();
+	//void playSFXMovement();
 	//BONUS FEATURE SOUNDS ADDED BELOW
-	*/
-	//PLAY MUSIC METHODS
+
+//PLAY MUSIC METHODS
 	/*
 	//Base Music
-	void playMusicMenu;
-	void playMusicGameOne;
+	void playMusicMenu();
+	void playMusicGameOne();
 	//BONUS FEATURE MUSIC ADDED BELOW
 	*/
 
