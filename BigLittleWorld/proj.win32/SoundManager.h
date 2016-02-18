@@ -39,3 +39,5 @@ public:
 //http://www.cocos2d-x.org/wiki/Audio
 //http://www.ogre3d.org/tikiwiki/tiki-index.php?page=FMOD+SoundManager
 //https://github.com/MikelEiza/Cocos2d-x-Game-Structure/blob/master/Classes/Singletons/SoundManager.h
+//http://www.bfxr.net/ //<<< Make sound effects
+// FORMATTING - MP3 for music on both, WAV for iOS SFX and OGG for SFX on andriod.
