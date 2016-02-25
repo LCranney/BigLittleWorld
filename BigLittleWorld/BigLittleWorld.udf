@@ -32,6 +32,9 @@
       <Value ctype="TabsInfo">
         <OpenedDocuments>
           <FilePathData Path="MainScene.csd" />
+          <FilePathData Path="Enemy1.csd" />
+          <FilePathData Path="Enemy2.csd" />
+          <FilePathData Path="Enemy3.csd" />
         </OpenedDocuments>
         <ActiveDocument Path="MainScene.csd" />
       </Value>
