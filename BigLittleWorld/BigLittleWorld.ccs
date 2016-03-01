@@ -13,6 +13,12 @@
         <Image Name="purple.png" />
         <Image Name="orange.png" />
         <Image Name="SplashScene.png" />
+        <PlistInfo Name="Enemy1.csi" Type="Plist" />
+        <Image Name="Enemy001-1.png" />
+        <Image Name="Enemy001-2.png" />
+        <PlistInfo Name="Enemy2.csi" Type="Plist" />
+        <Image Name="Enemy002-1.png" />
+        <Image Name="Enemy002-2.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

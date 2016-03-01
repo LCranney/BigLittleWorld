@@ -35,7 +35,6 @@ private:
 	Enemy1*				enemy1a;
 	Enemy2*				enemy2;
 	Enemy3*				enemy3;
-	Level1* AddLevel;
 
 };
 

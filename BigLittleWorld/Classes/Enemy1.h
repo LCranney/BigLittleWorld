@@ -2,10 +2,13 @@
 #define __CocosProject__ENEMY1__
 
 #include "cocos2d.h"
+#include "SpriteAnimator.h"
 #include "ui/cocosGUI.h"
+#include <string>
 
 #include <stdio.h>
 
+using namespace std;
 
 class Enemy1 : public cocos2d::Node
 {
@@ -27,7 +30,9 @@ private:
 	float		distance;
 	int movement;
 	int startMovement;
+	SpriteAnimator* enemyAnimation;
 
-
+	Vector<SpriteFrame*> frames;
+	Animation* animation;
 };
 #endif 

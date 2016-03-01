@@ -3,9 +3,12 @@
 
 #include "cocos2d.h"
 #include "ui/cocosGUI.h"
-
+#include <string>
 #include <stdio.h>
+#include <vector>
 
+using namespace std;
+using namespace cocos2d;
 
 class Enemy2 : public cocos2d::Node
 {
@@ -16,7 +19,7 @@ public:
 	virtual bool init(float SXPos, float SYPos, float Dis);
 	static Enemy2* create(float SXPos, float SYPos, float Dis);
 
-	void    update(float);
+	void update(float);
 
 private:
 	cocos2d::Sprite* enemy2;
@@ -26,6 +29,7 @@ private:
 	bool		MovingDown;
 	float		distance;
 
-
+	Vector<SpriteFrame*> frames;
+	Animation* animation;
 };
 #endif 

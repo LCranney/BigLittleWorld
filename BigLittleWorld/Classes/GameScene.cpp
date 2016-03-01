@@ -66,9 +66,6 @@ bool GameScene::init()
 	this->addChild(enemy1);
 	this->addChild(enemy3);
 
-	AddLevel = new Level1(this);
-	AddLevel->AddLevel(this);
-
 	auto contactListener = EventListenerPhysicsContact::create();
 	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
