@@ -12,7 +12,13 @@ public:
 	~GameManager();
 	
 private:
-
+	//We need to set up some global variables that all classes alter to make up the game
+	//Global Variables
+	/*
+	int g_PlayerScore;
+	int g_PlayerLives;
+	bool g_PlayerAlive;
+	*/
 };
 
 #endif // __GAMEMANAGER_SCENE_H__
