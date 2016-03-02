@@ -1,5 +1,5 @@
 <Solution>
-  <PropertyGroup Name="BIGLIT~1" Version="2.3.3.0" Type="CocosStudio" />
+  <PropertyGroup Name="BigLittleWorld" Version="2.3.3.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
@@ -13,6 +13,8 @@
         <Image Name="purple.png" />
         <Image Name="orange.png" />
         <Image Name="SplashScene.png" />
+        <Project Name="Spike.csd" Type="Node" />
+        <Image Name="Spike.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

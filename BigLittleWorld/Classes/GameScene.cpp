@@ -5,7 +5,6 @@
 #include "ui/CocosGUI.h"
 #include "Enemy1.h"
 #include "Enemy2.h"
-#include "Enemy3.h"
 
 USING_NS_CC;
 
@@ -46,7 +45,6 @@ bool GameScene::init()
 	enemy1 = Enemy1::create(450.0f, 100.0f, 100.0f);
 	enemy1a = Enemy1::create(600.0f, 50.0f, 150.0f);
 	enemy2 = Enemy2::create(750.0f, 30.0f, 100.0f);
-	enemy3 = Enemy3::create();
 
 	this->addChild(backgroundSprite);
 
@@ -63,7 +61,6 @@ bool GameScene::init()
 	this->addChild(enemy2);	
 	this->addChild(enemy1a);	
 	this->addChild(enemy1);
-	this->addChild(enemy3);
 
 	auto contactListener = EventListenerPhysicsContact::create();
 	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
