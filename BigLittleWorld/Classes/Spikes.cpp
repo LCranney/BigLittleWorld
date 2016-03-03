@@ -3,10 +3,10 @@
 
 using namespace cocos2d;
 
-Spikes* Spikes::create(float SXPos, float SYPos, float Dis)
+Spikes* Spikes::create(float SXPos, float SYPos)
 {
 	Spikes* myNode = new Spikes();
-	if (myNode->init(SXPos, SYPos, Dis))
+	if (myNode->init(SXPos, SYPos))
 	{
 		myNode->autorelease();
 		return myNode;
@@ -19,7 +19,7 @@ Spikes* Spikes::create(float SXPos, float SYPos, float Dis)
 	return myNode;
 }
 
-bool Spikes::init(float SXPos, float SYPos, float Dis)
+bool Spikes::init(float SXPos, float SYPos)
 {
 	if (!Node::init())
 	{
@@ -38,7 +38,6 @@ bool Spikes::init(float SXPos, float SYPos, float Dis)
 
 	startXPosition = SXPos;
 	startYPosition = SYPos;
-	distance = Dis;
 	spike->setPosition(startXPosition, startYPosition);
 
 	return true;
@@ -52,11 +51,4 @@ Spikes::Spikes()
 Spikes::~Spikes()
 {
 
-}
-
-
-void Spikes::update(float deltaTime)
-{
-	//Get the window size.
-	auto  winSize = Director::getInstance()->getVisibleSize();
 }

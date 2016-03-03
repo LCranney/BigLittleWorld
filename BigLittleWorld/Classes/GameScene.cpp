@@ -5,6 +5,7 @@
 #include "ui/CocosGUI.h"
 #include "Enemy1.h"
 #include "Enemy2.h"
+#include "Spikes.h"
 
 USING_NS_CC;
 
@@ -44,7 +45,20 @@ bool GameScene::init()
 	
 	enemy1 = Enemy1::create(450.0f, 100.0f, 100.0f);
 	enemy1a = Enemy1::create(600.0f, 50.0f, 150.0f);
+	enemy1b = Enemy1::create(600.0f, 65.0f, 125.0f);
+	enemy1c = Enemy1::create(600.0f, 80.0f, 100.0f);
+	enemy1d = Enemy1::create(600.0f, 95.0f, 75.0f);
+	enemy1e = Enemy1::create(600.0f, 105.0f, 50.0f);
+	enemy1f = Enemy1::create(600.0f, 120.0f, 25.0f);
 	enemy2 = Enemy2::create(750.0f, 30.0f, 100.0f);
+	spike = Spikes::create(500.0f, 100.0f);
+	spike2 = Spikes::create(500.0f, 100.0f);
+	spike3 = Spikes::create(510.0f, 100.0f);
+	spike4 = Spikes::create(520.0f, 100.0f);
+	spike5 = Spikes::create(530.0f, 100.0f);
+	spike6 = Spikes::create(540.0f, 100.0f);
+	spike7 = Spikes::create(550.0f, 100.0f);
+	spike8 = Spikes::create(560.0f, 100.0f);
 
 	this->addChild(backgroundSprite);
 
@@ -59,8 +73,21 @@ bool GameScene::init()
 
 	this->addChild(edgeNode);
 	this->addChild(enemy2);	
-	this->addChild(enemy1a);	
+	this->addChild(enemy1a);
+	this->addChild(enemy1b);
+	this->addChild(enemy1c);
+	this->addChild(enemy1d);
+	this->addChild(enemy1e);
+	this->addChild(enemy1f);
 	this->addChild(enemy1);
+	this->addChild(spike);
+	this->addChild(spike2);
+	this->addChild(spike3);
+	this->addChild(spike4);
+	this->addChild(spike5);
+	this->addChild(spike6);
+	this->addChild(spike7);
+	this->addChild(spike8);
 
 	auto contactListener = EventListenerPhysicsContact::create();
 	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);

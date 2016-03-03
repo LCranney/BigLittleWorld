@@ -13,16 +13,14 @@ public:
 	Spikes();
 	~Spikes();
 
-	virtual bool init(float SXPos, float SYPos, float Dis);
-	static Spikes* create(float SXPos, float SYPos, float Dis);
+	virtual bool init(float SXPos, float SYPos);
+	static Spikes* create(float SXPos, float SYPos);
 
-	void    update(float);
 
 private:
 	cocos2d::Sprite* spike;
 	float       startXPosition;
 	float       startYPosition;
-	float		distance;
 
 };
 #endif 
