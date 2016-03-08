@@ -51,10 +51,15 @@
     <ClCompile Include="..\Classes\GameManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="PickUp.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
     <ClCompile Include="SoundManager.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SoundManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="PickUp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -100,9 +105,14 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="SoundManager.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="PickUp.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SoundManager.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="PickUp.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
