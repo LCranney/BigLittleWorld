@@ -13,8 +13,8 @@ public:
 	Enemy3();
 	~Enemy3();
 
-	virtual bool init() override;
-	static Enemy3* create();
+	virtual bool init(float SXPos, float SYPos, float Dis);
+	static Enemy3* create(float SXPos, float SYPos, float Dis);
 
 	void    update(float);
 
@@ -23,8 +23,10 @@ private:
 	float       startXPosition;
 	float       startYPosition;
 	float       currentSpeed;
-	bool		MovingUp;
-
+	bool		MovingLeft;
+	float		distance;
+	int			movement;
+	int			startMovement;
 
 };
 #endif 

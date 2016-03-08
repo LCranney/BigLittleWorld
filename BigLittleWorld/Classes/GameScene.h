@@ -5,7 +5,7 @@
 
 class Enemy1;
 class Enemy2;
-class Spikes;
+class Enemy3;
 
 class GameScene : public cocos2d::Layer
 {
@@ -27,21 +27,8 @@ private:
 	cocos2d::PhysicsWorld *sceneWorld;
 
 	Enemy1*				enemy1;
-	Enemy1*				enemy1a;
-	Enemy1*				enemy1b;
-	Enemy1*				enemy1c;
-	Enemy1*				enemy1d;
-	Enemy1*				enemy1e;
-	Enemy1*				enemy1f;
 	Enemy2*				enemy2;
-	Spikes*				spike; 
-	Spikes*				spike2;
-	Spikes*				spike3;
-	Spikes*				spike4;
-	Spikes*				spike5;
-	Spikes*				spike6;
-	Spikes*				spike7;
-	Spikes*				spike8;
+	Enemy3*				enemy3;
 
 };
 
