@@ -2,6 +2,8 @@
 #define __PickMeUp_H__
 
 #include "cocos2d.h"
+#include "GameManager.h"
+#include "SoundManager.h"
 
 class PickMeUp : public cocos2d::Layer
 {
@@ -10,7 +12,10 @@ public:
 	virtual bool init();
 	void Update(float);
 
-	//Custom Methods for each Collectible type
+	//PickUp Create
+
+
+	//PickUp Effects
 	void Shield();
 	void WingsOfLife();
 	void Glue();

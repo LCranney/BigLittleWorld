@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "ui/cocosGUI.h"
-
+#include "SpriteAnimator.h"
 #include <stdio.h>
 
 
@@ -27,6 +27,7 @@ private:
 	float		distance;
 	int movement;
 
-
+	//Vector<SpriteFrame*> frames;
+	//Animation* animation;
 };
 #endif 

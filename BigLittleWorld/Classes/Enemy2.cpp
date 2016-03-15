@@ -36,6 +36,30 @@ bool Enemy2::init(float SXPos, float SYPos, float Dis)
 
 	enemy2 = (Sprite*)rootNode->getChildByName("Enemy2");
 
+	////						Sprite Animation BEGIN
+	//SpriteBatchNode* _spritebatch = SpriteBatchNode::create("Enemy2.png");
+
+	//SpriteFrameCache* _cache = SpriteFrameCache::getInstance();
+	//_cache->addSpriteFramesWithFile("Enemy2.plist");
+
+	//enemy2 = Sprite::createWithSpriteFrameName("Enemy002-1.png");
+	//_spritebatch->addChild(enemy2);
+	//addChild(_spritebatch);
+
+	////Vector<SpriteFrame*> frames;
+	//const int kNumberOfFrames = 2;
+	//for (int i = 1; i <= kNumberOfFrames; i++)
+	//{
+	//	stringstream ss;
+	//	ss << "Enemy002-" << i << ".png";
+	//	string string1 = ss.str();
+	//	frames.pushBack(_cache->getSpriteFrameByName(string1));
+	//}
+
+	//Animation* animation = Animation::createWithSpriteFrames(frames, 1.0f);
+	//enemy2->runAction(RepeatForever::create(Animate::create(animation)));
+	////						Sprite Animation END						//
+
 	startXPosition = SXPos;
 	startYPosition = SYPos;
 	distance = Dis;
