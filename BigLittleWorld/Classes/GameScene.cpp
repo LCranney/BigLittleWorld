@@ -9,6 +9,7 @@
 #include "Enemy2.h"
 #include "Enemy3.h"
 #include "Player.h"
+#include <iostream>
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -58,9 +59,9 @@ bool GameScene::init()
 	auto rootNode = Sprite::create();
 	rootNode->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	
-	enemy1 = Enemy1::create(450.0f, 100.0f, 100.0f);
-	enemy1a = Enemy1::create(600.0f, 50.0f, 150.0f);
-	enemy2 = Enemy2::create(750.0f, 30.0f, 100.0f);
+	//enemy1 = Enemy1::create(450.0f, 100.0f, 100.0f);
+	//enemy1a = Enemy1::create(600.0f, 50.0f, 150.0f);
+	//enemy2 = Enemy2::create(750.0f, 30.0f, 100.0f);
 
 	this->addChild(rootNode);
 
@@ -72,19 +73,20 @@ bool GameScene::init()
 
 	this->addChild(edgeNode);
 
-	player = Player::create(500.0f, 200.0f);
+	player = Player::create(500.0f, 500.0f);
 
 	{
-		auto playerBody = PhysicsBody::createBox(Size(10.0f, 10.0f), PhysicsMaterial(0.0f, 0.0f, 0.0f));
+		auto playerBody = PhysicsBody::createBox(player->getContentSize());
 		playerBody->setRotationEnable(false);
 		playerBody->setCollisionBitmask(1);
 		playerBody->setContactTestBitmask(true);
+
 		player->setPhysicsBody(playerBody);
 	}
 
 	this->addChild(player);
 
-	{
+	/*{
 
 		auto enemyBody = PhysicsBody::createBox(enemy1->getContentSize());
 		enemyBody->setDynamic(false);
@@ -97,10 +99,36 @@ bool GameScene::init()
 
 	}
 
-	
 	this->addChild(enemy2);	
 	this->addChild(enemy1a);	
-	this->addChild(enemy1);
+	this->addChild(enemy1);*/
+
+	auto level1 = CSLoader::createNode("Level1Test.csb");
+
+	Floor1 = (Sprite*)level1->getChildByName("Floor1");
+	Floor2 = (Sprite*)level1->getChildByName("Floor2");
+
+	{
+		auto floorBody1 = PhysicsBody::createBox(Floor1->getContentSize());
+		floorBody1->setDynamic(false);
+		floorBody1->setCollisionBitmask(0);
+		floorBody1->setContactTestBitmask(true);
+
+		Floor1->setPhysicsBody(floorBody1);
+	}
+
+	this->addChild(Floor1);
+
+	{
+		auto floorBody2 = PhysicsBody::createBox(Floor2->getContentSize());
+		floorBody2->setDynamic(false);
+		floorBody2->setCollisionBitmask(0);
+		floorBody2->setContactTestBitmask(true);
+
+		Floor2->setPhysicsBody(floorBody2);
+	}
+
+	this->addChild(Floor2);
 
 	auto contactListener = EventListenerPhysicsContact::create();
 	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
@@ -149,7 +177,10 @@ void GameScene::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
 
-	//Collision between player and ground
+	if (1 == a->getCollisionBitmask() && 0 == b->getCollisionBitmask() || 0 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+	{
+		player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
+	}
 }
 
 void GameScene::onContactSeperate(cocos2d::PhysicsContact &contact)
@@ -183,66 +214,4 @@ void GameScene::onTouchMoved(Touch* touch, Event* event)
 
 void GameScene::onTouchCancelled(Touch* touch, Event* event)
 {
-}
-
-void GameScene::GoToGameOverScene(cocos2d::Ref *sender)
-{
-	auto scene = GameOverScene::createScene();
-
-	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
-}
-
-CCPoint GameScene::tileCoordForPosition(CCPoint position)
-{
-	int x = position.x / _level_1->getTileSize().width;
-	int y = ((_level_1->getMapSize().height * _level_1->getTileSize().height) - position.y) / _level_1->getTileSize().height;
-	return ccp(x, y);
-}
-
-void GameScene::setPlayerPosition(CCPoint position)
-{
-	CCPoint tileCoord = this->tileCoordForPosition(position);
-	int tileGidWhite = _WhiteLayer->tileGIDAt(tileCoord);
-	if (tileGidWhite) 
-	{
-		ValueMap* properties = _level_1->propertiesForGID(tileGidWhite).asValueMap;
-		if (properties) 
-		{
-			CCString *collision = new CCString();
-			*collision = properties->at("Collidable").asString();
-			if (collision && (collision->compare("True") == 0)) 
-			{
-				return;
-			}
-		}
-	}
-	int tileGidSpike = _SpikeLayer->tileGIDAt(tileCoord);
-	if (tileGidSpike)
-	{
-		ValueMap* properties = _level_1->propertiesForGID(tileGidSpike).asValueMap;
-		if (properties)
-		{
-			CCString *collision = new CCString();
-			*collision = properties->at("Collidable").asString();
-			if (collision && (collision->compare("True") == 0))
-			{
-				GoToGameOverScene(this);
-			}
-		}
-	}
-	int tileGidFinish = _FinishLayer->tileGIDAt(tileCoord);
-	if (tileGidFinish)
-	{
-		ValueMap* properties = _level_1->propertiesForGID(tileGidFinish).asValueMap;
-		if (properties)
-		{
-			CCString *collision = new CCString();
-			*collision = properties->at("Collidable").asString();
-			if (collision && (collision->compare("True") == 0))
-			{
-				GoToGameOverScene(this);
-			}
-		}
-	}
-	player->setPosition(position);
 }

@@ -17,6 +17,15 @@
         <TmxFile Name="Level_04.tmx" />
         <TmxFile Name="Level_03.tmx" />
         <TmxFile Name="Level_01.tmx" />
+        <Image Name="Level1-Finish.png" />
+        <Image Name="Level1-Floor1.png" />
+        <Image Name="Level1-Floor2.png" />
+        <Image Name="Level1-Floor3.png" />
+        <Image Name="Level1-Roof.png" />
+        <Image Name="Level1-Spike1.png" />
+        <Image Name="Level1-Spike2.png" />
+        <Image Name="Level1-SpikeRoof.png" />
+        <Project Name="Level1Test.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

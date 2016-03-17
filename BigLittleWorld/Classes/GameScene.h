@@ -2,7 +2,6 @@
 #define __GAME_SCENE_H__
 
 #include "cocos2d.h"
-#include "math\CCGeometry.h"
 
 class Enemy1;
 class Enemy2;
@@ -33,10 +32,6 @@ private:
 	virtual void onTouchMoved(cocos2d::Touch*, cocos2d::Event*);
 	virtual void onTouchCancelled(cocos2d::Touch*, cocos2d::Event*);
 
-	//void setViewPointCenter(CCPoint position);
-	cocos2d::CCPoint tileCoordForPosition(CCPoint position);
-	void setPlayerPosition(CCPoint position);
-
 	cocos2d::PhysicsWorld *sceneWorld;
 
 	Enemy1*			    enemy1Node;
@@ -57,11 +52,16 @@ private:
 	cocos2d::TMXLayer* _SpikeLayer;
 	cocos2d::TMXLayer* _FinishLayer;
 
+	cocos2d::Sprite* Floor1;
+	cocos2d::Sprite* Floor2;
+	cocos2d::Sprite* Floor3;
+	cocos2d::Sprite* Floor4;
+	cocos2d::Sprite* Spike1;
+	cocos2d::Sprite* Spike2;
+	cocos2d::Sprite* Spike3;
+	cocos2d::Sprite* Finish;
 
-	
 	void GoToGameOverScene(cocos2d::Ref *sender);
-
-
 
 };
 
