@@ -2,11 +2,11 @@
 #define __GAME_SCENE_H__
 
 #include "cocos2d.h"
+#include "math\CCGeometry.h"
 
 class Enemy1;
 class Enemy2;
-class Enemy3;
-class Level1;
+class Player;
 
 class GameScene : public cocos2d::Layer
 {
@@ -24,18 +24,44 @@ private:
 	void SetPhysicsWorld(cocos2d::PhysicsWorld *world){ sceneWorld = world; }
 
 	bool onContactBegin(cocos2d::PhysicsContact &contact);
+	bool onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::PhysicsContactPreSolve& solve);
+	void onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos2d::PhysicsContactPostSolve& solve);
+	void onContactSeperate(cocos2d::PhysicsContact &contact);
+
+	virtual bool onTouchBegan(cocos2d::Touch*, cocos2d::Event*);
+	virtual void onTouchEnded(cocos2d::Touch*, cocos2d::Event*);
+	virtual void onTouchMoved(cocos2d::Touch*, cocos2d::Event*);
+	virtual void onTouchCancelled(cocos2d::Touch*, cocos2d::Event*);
+
+	//void setViewPointCenter(CCPoint position);
+	cocos2d::CCPoint tileCoordForPosition(CCPoint position);
+	void setPlayerPosition(CCPoint position);
 
 	cocos2d::PhysicsWorld *sceneWorld;
 
 	Enemy1*			    enemy1Node;
 	Enemy1*				enemy1aNode;
 	Enemy2*				enemy2Node;
-	Enemy3*			    enemy3Node;
 	Enemy1*				enemy1;
 	Enemy1*				enemy1a;
 	Enemy2*				enemy2;
-	Enemy3*				enemy3;
-	Level1* AddLevel;
+	Player*				player;
+
+	cocos2d::Vec2 startPosition;
+	cocos2d::Vec2 playerPosition;
+
+	cocos2d::TMXTiledMap* _level_1;
+
+	cocos2d::TMXLayer* _BlackLayer;
+	cocos2d::TMXLayer* _WhiteLayer;
+	cocos2d::TMXLayer* _SpikeLayer;
+	cocos2d::TMXLayer* _FinishLayer;
+
+
+	
+	void GoToGameOverScene(cocos2d::Ref *sender);
+
+
 
 };
 

@@ -2,7 +2,6 @@
 #include "GameScene.h"
 #include "HelloWorldScene.h"
 #include "Definitions.h"
-
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
