@@ -40,41 +40,170 @@ bool GameScene::init()
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto backgroundSprite = Sprite::create("GameScene.png");
-	backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+	_level_1 = new CCTMXTiledMap();
+	_level_1->initWithTMXFile("Level_01.tmx");
+
+	_BlackLayer = _level_1->layerNamed("Tile Layer 1");
+	_WhiteLayer = _level_1->layerNamed("Tile Layer 2");
+	_SpikeLayer = _level_1->layerNamed("Tile Layer 3");
+	_FinishLayer = _level_1->layerNamed("Tile Layer 4");
+
+	this->addChild(_level_1);
+
+	auto rootNode = Sprite::create();
+	rootNode->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	
 	enemy1 = Enemy1::create(450.0f, 100.0f, 100.0f);
 	enemy2 = Enemy2::create(750.0f, 30.0f, 100.0f);
 	enemy3 = Enemy3::create(450.0f, 100.0f, 100.0f);
 
-
-	this->addChild(backgroundSprite);
+	this->addChild(rootNode);
 
 	auto edgeBody = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
-	edgeBody->setCollisionBitmask(OBSTACLE_COLLISION_BITMASK);
-	edgeBody->setContactTestBitmask(true);
-
 	auto edgeNode = Node::create();
-	edgeBody->setPositionOffset(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-
+	edgeNode->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	edgeNode->setPhysicsBody(edgeBody);
 
 	this->addChild(edgeNode);
-	this->addChild(enemy1);	
-	this->addChild(enemy2);	
-	this->addChild(enemy3);
+
+	player = Sprite::create("Circle_Player.png");
+	{
+		auto playerBody = PhysicsBody::createBox(player->getContentSize());
+		playerBody->setRotationEnable(false);
+		playerBody->setCollisionBitmask(1);
+		playerBody->setContactTestBitmask(true);
+
+		player->setPhysicsBody(playerBody);
+	}
+
+	this->addChild(player);
+
+	/*{
+
+	auto enemyBody = PhysicsBody::createBox(enemy1->getContentSize());
+	enemyBody->setDynamic(false);
+	enemyBody->setCollisionBitmask(2);
+	enemyBody->setContactTestBitmask(true);
+
+	enemy1->setPhysicsBody(enemyBody);
+	enemy1a->setPhysicsBody(enemyBody);
+	enemy2->setPhysicsBody(enemyBody);
+
+	}
+
+	this->addChild(enemy2);
+	this->addChild(enemy1a);
+	this->addChild(enemy1);*/
+
+	/*auto level1 = CSLoader::createNode("Level1Test.csb");
+
+	Floor1 = (Sprite*)level1->getChildByName("Floor1");
+	Floor2 = (Sprite*)level1->getChildByName("Floor2");
+
+	{
+		auto floorBody1 = PhysicsBody::createBox(Floor1->getContentSize());
+		floorBody1->setDynamic(false);
+		floorBody1->setCollisionBitmask(0);
+		floorBody1->setContactTestBitmask(true);
+
+		Floor1->setPhysicsBody(floorBody1);
+	}
+
+	this->addChild(Floor1);
+
+	{
+		auto floorBody2 = PhysicsBody::createBox(Floor2->getContentSize());
+		floorBody2->setDynamic(false);
+		floorBody2->setCollisionBitmask(0);
+		floorBody2->setContactTestBitmask(true);
+
+		Floor2->setPhysicsBody(floorBody2);
+	}
+
+	this->addChild(Floor2);*/
 
 	auto contactListener = EventListenerPhysicsContact::create();
 	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
-	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
-	
-    return true;
+	contactListener->onContactPreSolve = CC_CALLBACK_2(GameScene::onContactPreSolve, this);
+	contactListener->onContactPostSolve = CC_CALLBACK_2(GameScene::onContactPostSolve, this);
+	contactListener->onContactSeparate = CC_CALLBACK_1(GameScene::onContactSeperate, this);
+	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
+
+	auto touchListener = EventListenerTouchOneByOne::create();
+	touchListener->onTouchBegan = CC_CALLBACK_2(GameScene::onTouchBegan, this);
+	touchListener->onTouchEnded = CC_CALLBACK_2(GameScene::onTouchEnded, this);
+	touchListener->onTouchMoved = CC_CALLBACK_2(GameScene::onTouchMoved, this);
+	touchListener->onTouchCancelled = CC_CALLBACK_2(GameScene::onTouchCancelled, this);
+	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
+
+
+
+	return true;
 }
 
 bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact)
 {
-	PhysicsBody *a = contact.getShapeA()->getBody();
-	PhysicsBody *b = contact.getShapeB()->getBody();
+	PhysicsBody* a = contact.getShapeA()->getBody();
+	PhysicsBody* b = contact.getShapeB()->getBody();
+
+	//On contact between player and any enemy, spike, or laser. Kill player. Check Lives. Run reset/Game Over.
 
 	return true;
+}
+
+bool GameScene::onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::PhysicsContactPreSolve& solve)
+{
+	PhysicsBody* a = contact.getShapeA()->getBody();
+	PhysicsBody* b = contact.getShapeB()->getBody();
+
+	if (1 == a->getCollisionBitmask() || 1 == b->getCollisionBitmask())
+	{
+		solve.setRestitution(0);
+	}
+
+	return true;
+}
+
+void GameScene::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos2d::PhysicsContactPostSolve& solve)
+{
+	PhysicsBody* a = contact.getShapeA()->getBody();
+	PhysicsBody* b = contact.getShapeB()->getBody();
+
+	if (1 == a->getCollisionBitmask() && 0 == b->getCollisionBitmask() || 0 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+	{
+		player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
+	}
+}
+
+void GameScene::onContactSeperate(cocos2d::PhysicsContact &contact)
+{
+	PhysicsBody* a = contact.getShapeA()->getBody();
+	PhysicsBody* b = contact.getShapeB()->getBody();
+
+	if (1 == a->getCollisionBitmask() || 1 == b->getCollisionBitmask())
+	{
+		//Set player grounded false.
+	}
+}
+
+bool GameScene::onTouchBegan(Touch* touch, Event* event)
+{
+	startPosition = touch->getLocation();
+
+	return true;
+}
+
+void GameScene::onTouchEnded(Touch* touch, Event* event)
+{
+	Vec2 endPosition = touch->getLocation();
+	Vec2 slingshot = startPosition - endPosition;
+	player->getPhysicsBody()->setVelocity(slingshot * 2);
+}
+
+void GameScene::onTouchMoved(Touch* touch, Event* event)
+{
+}
+
+void GameScene::onTouchCancelled(Touch* touch, Event* event)
+{
 }

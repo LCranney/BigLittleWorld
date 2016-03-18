@@ -1,5 +1,5 @@
 <Solution>
-  <PropertyGroup Name="BigLittleWorld" Version="2.3.3.0" Type="CocosStudio" />
+  <PropertyGroup Name="BIGLIT~1" Version="2.3.3.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
@@ -9,7 +9,6 @@
         <Project Name="Enemy2.csd" Type="Node" />
         <Project Name="Enemy3.csd" Type="Node" />
         <Image Name="SplashScene.png" />
-        <Project Name="Spike.csd" Type="Node" />
         <Image Name="Diomond_Enemy.png" />
         <Image Name="Circle_Enemy.png" />
         <Image Name="Trialngle_Enemy.png" />
