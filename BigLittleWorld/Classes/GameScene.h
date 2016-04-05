@@ -10,13 +10,13 @@ class Enemy3;
 class GameScene : public cocos2d::Layer
 {
 public:
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
-    static cocos2d::Scene* createScene();
+	// there's no 'id' in cpp, so we recommend returning the class instance pointer
+	static cocos2d::Scene* createScene();
 
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();
+	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+	virtual bool init();
 
-    // implement the "static create()" method manually
+	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);
 
 private:
@@ -35,28 +35,33 @@ private:
 	cocos2d::PhysicsWorld *sceneWorld;
 
 	Enemy1*				enemy1;
+	Enemy1*				enemy1a;
 	Enemy2*				enemy2;
-	Enemy3*				enemy3;
 
 	cocos2d::Vec2 startPosition;
 	cocos2d::Vec2 playerPosition;
 
-	cocos2d::TMXTiledMap* _level_1;
-
-	cocos2d::TMXLayer* _BlackLayer;
-	cocos2d::TMXLayer* _WhiteLayer;
-	cocos2d::TMXLayer* _SpikeLayer;
-	cocos2d::TMXLayer* _FinishLayer;
-
 	cocos2d::Sprite* Floor1;
 	cocos2d::Sprite* Floor2;
 	cocos2d::Sprite* Floor3;
-	cocos2d::Sprite* Floor4;
+	cocos2d::Sprite* Wall1;
+	cocos2d::Sprite* Wall2;
+	cocos2d::Sprite* Wall3;
+	cocos2d::Sprite* Wall4;
+	cocos2d::Sprite* Roof;
+	cocos2d::Sprite* SpikeRoof2;
+	cocos2d::Sprite* SpikeRoof3;
+	cocos2d::Sprite* SpikeRoof4;
 	cocos2d::Sprite* Spike1;
 	cocos2d::Sprite* Spike2;
 	cocos2d::Sprite* Spike3;
+	cocos2d::Sprite* SpikeWall1;
+	cocos2d::Sprite* SpikeWall2;
 	cocos2d::Sprite* Finish;
 	cocos2d::Sprite* player;
+
+	bool opposite;
+	bool slingshot;
 
 	void GoToGameOverScene(cocos2d::Ref *sender);
 

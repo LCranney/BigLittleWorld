@@ -6,15 +6,15 @@
       <ObjectData Name="Node" Tag="4" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="water" ActionTag="-1523198226" Tag="6" IconVisible="False" LeftMargin="-32.0083" RightMargin="-31.9917" TopMargin="-0.0032" BottomMargin="-63.9968" ctype="SpriteObjectData">
-            <Size X="64.0000" Y="64.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="-0.0083" Y="0.0032" />
-            <Scale ScaleX="8.9350" ScaleY="4.5726" />
+          <AbstractNodeData Name="water" ActionTag="-1523198226" Tag="6" IconVisible="False" LeftMargin="-24.0000" RightMargin="-24.0000" TopMargin="-24.0000" BottomMargin="-24.0000" ctype="SpriteObjectData">
+            <Size X="48.0000" Y="48.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="red2.png" Plist="" />
+            <FileData Type="Normal" Path="Trialngle_Enemy.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
