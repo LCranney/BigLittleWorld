@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="Blue_Down" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Blue_Down.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="2" name="Blue_Left" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Blue_Left.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="3" name="Blue_Right" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Blue_Right.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="4" name="Blue_Up" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Blue_Up.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="5" name="Green" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Green.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="6" name="Purple" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Purple.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="7" name="White" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="White.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="8" name="Red_Down" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Red_Down.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="9" name="Red_Left" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Red_Left.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="10" name="Red_Right" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Red_Right.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="11" name="Red_up" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Red_up.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="12" name="Black" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Black.png" width="32" height="32"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzjYWBg4BnFo3gUj+JRPIpH8SgexVTDAB9cHCE=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="30" height="20">
+  <properties>
+   <property name="Collidable" value="True"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjZ2BgYB/Fo3gUj+IhgEfBKKAFIDbNkZM+yTWP2vaSk8dG7aXMXgAzrwsi
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="30" height="20">
+  <properties>
+   <property name="Collidable" value="True"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIKhATgGCI+CUTAKhifgRsKkqCVGDwBMLAFJ
+  </data>
+ </layer>
+ <layer name="Tile Layer 4" width="30" height="20">
+  <properties>
+   <property name="Collidable" value="True"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAT0AKxIeBcMbAAAl+AAQ
+  </data>
+ </layer>
+</map>

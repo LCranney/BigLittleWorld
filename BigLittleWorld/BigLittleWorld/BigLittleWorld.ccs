@@ -1,0 +1,71 @@
+<Solution>
+  <PropertyGroup Name="BigLittleWorld" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Image Name="HelloWorld.png" />
+        <Project Name="Enemy1.csd" Type="Node" />
+        <Image Name="green.png" />
+        <Project Name="Enemy2.csd" Type="Node" />
+        <Project Name="Enemy3.csd" Type="Node" />
+        <Image Name="red2.png" />
+        <Image Name="purple.png" />
+        <Image Name="orange.png" />
+        <Image Name="SplashScene.png" />
+        <Project Name="Player.csd" Type="Node" />
+        <TmxFile Name="Level_04.tmx" />
+        <TmxFile Name="Level_03.tmx" />
+        <TmxFile Name="Level_01.tmx" />
+        <Image Name="Level1-Floor1.png" />
+        <Image Name="Level1-Floor2.png" />
+        <Image Name="Level1-Floor3.png" />
+        <Image Name="Level1-Roof.png" />
+        <Image Name="Level1-Spike1.png" />
+        <Image Name="Level1-Spike2.png" />
+        <Image Name="Level1-SpikeRoof.png" />
+        <Project Name="Level1Test.csd" Type="Layer" />
+        <Image Name="Circle_Player.png" />
+        <Image Name="Level1-Finish.png" />
+        <Image Name="Level2-Finish.png" />
+        <Image Name="Level2-Floor1.png" />
+        <Image Name="Level2-Floor2.png" />
+        <Image Name="Level2-Floor3.png" />
+        <Image Name="Level2-Floor4.png" />
+        <Image Name="Level2-Roof1.png" />
+        <Image Name="Level2-Roof2.png" />
+        <Image Name="Level2-Roof3.png" />
+        <Image Name="Level2-SpikeFloor.png" />
+        <Image Name="Level2-SpikeRoof1.png" />
+        <Image Name="Level2-SpikeRoof3.png" />
+        <Image Name="Level2-SpikeRoofMiddle.png" />
+        <Image Name="Level3-Finish.png" />
+        <Image Name="Level3-Floor1-Roof.png" />
+        <Image Name="Level3-Floor2.png" />
+        <Image Name="Level3-Floor3.png" />
+        <Image Name="Level3-Floor4.png" />
+        <Image Name="Level3-Opposite1.png" />
+        <Image Name="Level3-Opposite2.png" />
+        <Image Name="Level3-Spike1Bot.png" />
+        <Image Name="Level3-Spike1Top.png" />
+        <Image Name="Level3-Spike2Bot.png" />
+        <Image Name="Level3-Spike2Top.png" />
+        <Image Name="Level3-Wall.png" />
+        <Image Name="Level4-Finish.png" />
+        <Image Name="Level4-Floor.png" />
+        <Image Name="Level4-Floor2.png" />
+        <Image Name="Level4-Floor3.png" />
+        <Image Name="Level4-Roof.png" />
+        <Image Name="Level4-Spike1.png" />
+        <Image Name="Level4-Spike2.png" />
+        <Image Name="Level4-SpikeRoof1.png" />
+        <Image Name="Level4-SpikeRoof2.png" />
+        <Image Name="Level4-SpikeWall1.png" />
+        <Image Name="Level4-SpikeWall2.png" />
+        <Image Name="Level4-Wall1.png" />
+        <Image Name="Level4-Wall2.png" />
+        <Image Name="Level4-Wall4.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
