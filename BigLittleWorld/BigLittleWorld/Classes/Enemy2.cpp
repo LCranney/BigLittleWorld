@@ -44,6 +44,7 @@ bool Enemy2::init(float SXPos, float SYPos, float Dis)
 	MovingDown = false;
 
 	currentSpeed = 214.8f;
+	movement = 1;
 
 	return true;
 }
@@ -82,4 +83,52 @@ void Enemy2::update(float deltaTime)
 	{
 		MovingDown = false;
 	}
+
+
+	//if (movement == 1)
+	//{
+	//	if (enemy2->getPositionY() > startYPosition - distance)
+	//	{
+	//		enemy2->setPositionY(enemy2->getPositionY() - (currentSpeed * deltaTime));
+	//	}
+	//}
+	//else if (movement == 2)
+	//{
+	//	if (enemy2->getPositionX() < startXPosition + distance)
+	//	{
+	//		enemy2->setPositionX(enemy2->getPositionX() + (currentSpeed * deltaTime));
+	//	}
+
+	//}
+	//else if (movement == 3)
+	//{
+	//	if (enemy2->getPositionY() < startYPosition)
+	//	{
+	//		enemy2->setPositionY(enemy2->getPositionY() + (currentSpeed * deltaTime));
+	//	}
+	//}
+	//else if (movement == 4)
+	//{
+	//	if (enemy2->getPositionX() > startXPosition)
+	//	{
+	//		enemy2->setPositionX(enemy2->getPositionX() - (currentSpeed * deltaTime));
+	//	}
+	//}
+
+	//if (enemy2->getPositionX() > startXPosition && movement == 4)
+	//{
+	//	movement = 1;
+	//}
+	//if (enemy2->getPositionY() < startYPosition - distance && movement == 1)
+	//{
+	//	movement = 2;
+	//}
+	//if (enemy2->getPositionX() > startXPosition + distance && movement == 2)
+	//{
+	//	movement = 3;
+	//}
+	//if (enemy2->getPositionY() < startYPosition && movement == 3)
+	//{
+	//	movement = 4;
+	//}
 }

@@ -52,6 +52,7 @@ private:
 	cocos2d::Sprite* Wall3;
 	cocos2d::Sprite* Wall4;
 	cocos2d::Sprite* Roof;
+	cocos2d::Sprite* SpikeRoof1;
 	cocos2d::Sprite* SpikeRoof2;
 	cocos2d::Sprite* SpikeRoof3;
 	cocos2d::Sprite* SpikeRoof4;
@@ -66,7 +67,10 @@ private:
 	bool opposite;
 	bool slingshot;
 
-	void GoToGameOverScene(cocos2d::Ref *sender);
+	void GoToGameOverScene();
+	void GoToLevelScene();
+	void GoToMainMenuScene(cocos2d::Ref *sender);
+	void GoToLevel2();
 
 };
 

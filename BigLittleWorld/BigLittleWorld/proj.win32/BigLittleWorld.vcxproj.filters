@@ -39,13 +39,25 @@
     <ClCompile Include="..\Classes\HelpScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\LevelScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\SplashScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Player.cpp">
+    <ClCompile Include="..\Classes\HelpSceneSecondPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelpSceneThirdPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LevelComplete.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LevelScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelThree.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTwo.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,13 +92,25 @@
     <ClInclude Include="..\Classes\HelpScene.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\LevelScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\SplashScene.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Player.h">
+    <ClInclude Include="..\Classes\HelpSceneSecondPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelpSceneThirdPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelComplete.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelThree.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelTwo.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

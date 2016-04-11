@@ -1,12 +1,11 @@
-#include "GameOverScene.h"
+#include "LevelScene.h"
 #include "GameScene.h"
 #include "HelloWorldScene.h"
-#include "HelpScene.h"
-#include "LevelScene.h"
 #include "Definitions.h"
-
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "LevelTwo.h"
+#include "LevelThree.h"
 
 USING_NS_CC;
 
@@ -36,21 +35,43 @@ bool LevelScene::init()
     {
         return false;
     }
-    
+
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto backgroundSprite = Sprite::create("LevelScene.png");
+	auto backgroundSprite = Sprite::create("Level Screen.png");
 	backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-
 	this->addChild(backgroundSprite);
 
-	auto backLevelItem = MenuItemImage::create("Back Button1.png", "Back Button Clicked2.png", CC_CALLBACK_1(LevelScene::GoToMainMenuScene, this));
-	backLevelItem->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 3 + origin.y));
-	auto level = Menu::create(backLevelItem, NULL);
-	level->setPosition(Point::ZERO);
+	auto home1Item = MenuItemImage::create("Home Button.png", "Home Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToMainMenuScene, this));
+	home1Item->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 5 + origin.y));
+	auto home = Menu::create(home1Item, NULL);
+	home->setPosition(Point::ZERO);
+	this->addChild(home);
 
-	this->addChild(level);
+	auto Level1ButtonItem = MenuItemImage::create("Level 1 Button.png", "Level 1 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToGameScene, this));
+	Level1ButtonItem->setPosition(Point(visibleSize.width / 6 + origin.x, visibleSize.height / 2 + origin.y));
+	auto Level1Button = Menu::create(Level1ButtonItem, NULL);
+	Level1Button->setPosition(Point::ZERO);
+	this->addChild(Level1Button);
+
+	auto Level2ButtonItem = MenuItemImage::create("Level 2 Button.png", "Level 2 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToLevel2, this));
+	Level2ButtonItem->setPosition(Point(visibleSize.width / 2.6 + origin.x, visibleSize.height / 2 + origin.y));
+	auto Level2Button = Menu::create(Level2ButtonItem, NULL);
+	Level2Button->setPosition(Point::ZERO);
+	this->addChild(Level2Button);
+
+	auto Level3ButtonItem = MenuItemImage::create("Level 3 Button.png", "Level 3 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToLevel3, this));
+	Level3ButtonItem->setPosition(Point(visibleSize.width / 1.65 + origin.x, visibleSize.height / 2 + origin.y));
+	auto Level3Button = Menu::create(Level3ButtonItem, NULL);
+	Level3Button->setPosition(Point::ZERO);
+	this->addChild(Level3Button);
+
+	auto Level4ButtonItem = MenuItemImage::create("Level 4 Button.png", "Level 4 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToGameScene, this));
+	Level4ButtonItem->setPosition(Point(visibleSize.width / 1.2 + origin.x, visibleSize.height / 2 + origin.y));
+	auto Level4Button = Menu::create(Level4ButtonItem, NULL);
+	Level4Button->setPosition(Point::ZERO);
+	this->addChild(Level4Button);
 
     return true;
 }
@@ -62,5 +83,24 @@ void LevelScene::GoToMainMenuScene(cocos2d::Ref *sender)
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 
+void LevelScene::GoToGameScene(cocos2d::Ref *sender)
+{
+	auto scene = GameScene::createScene();
 
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+}
+
+void LevelScene::GoToLevel2(cocos2d::Ref *sender)
+{
+	auto scene = LevelTwo::createScene();
+
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+}
+
+void LevelScene::GoToLevel3(cocos2d::Ref *sender)
+{
+	auto scene = LevelThree::createScene();
+
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+}
 

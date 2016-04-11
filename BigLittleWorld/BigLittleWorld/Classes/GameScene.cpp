@@ -1,14 +1,14 @@
-#pragma warning(disable : C4996)
-
 #include "GameScene.h"
 #include "Definitions.h"
 #include "GameOverScene.h"
+#include "HelloWorldScene.h"
+#include "LevelScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "Enemy1.h"
 #include "Enemy2.h"
 #include "Enemy3.h"
-#include "Player.h"
+#include "LevelTwo.h"
 #include <iostream>
 
 USING_NS_CC;
@@ -44,13 +44,18 @@ bool GameScene::init()
         return false;
     }
 
-	auto rootNode = CSLoader::createNode("MainScene.csb");
+	auto rootNode = CSLoader::createNode("Level1.csb");
 
 	addChild(rootNode);
     
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	auto homeButtonGame = MenuItemImage::create("GameSceneHomeButton.png", "GameSceneHomeButton 1.png", CC_CALLBACK_1(GameScene::GoToMainMenuScene, this));
+	homeButtonGame->setPosition(Point(visibleSize.width / 1.1 + origin.x, visibleSize.height / 2 + origin.y));
+	auto homeButton = Menu::create(homeButtonGame, NULL);
+	homeButton->setPosition(Point::ZERO);
+	this->addChild(homeButton);
 	
 	//enemy1 = Enemy1::create(450.0f, 100.0f, 100.0f);
 	//enemy1a = Enemy1::create(600.0f, 50.0f, 150.0f);
@@ -148,64 +153,12 @@ bool GameScene::init()
 
 	rootNode->addChild(Roof);
 
-	Wall1 = (Sprite*)rootNode->getChildByName("Wall1");
-
-	{
-		auto wallBody1 = PhysicsBody::createBox(Wall1->getContentSize());
-		wallBody1->setDynamic(false);
-		wallBody1->setCollisionBitmask(6);
-		wallBody1->setContactTestBitmask(true);
-
-		Wall1->setPhysicsBody(wallBody1);
-	}
-
-	rootNode->addChild(Wall1);
-
-	Wall2 = (Sprite*)rootNode->getChildByName("Wall2");
-
-	{
-		auto wallBody2 = PhysicsBody::createBox(Wall2->getContentSize());
-		wallBody2->setDynamic(false);
-		wallBody2->setCollisionBitmask(7);
-		wallBody2->setContactTestBitmask(true);
-
-		Wall2->setPhysicsBody(wallBody2);
-	}
-
-	rootNode->addChild(Wall2);
-
-	Wall3 = (Sprite*)rootNode->getChildByName("Wall3");
-
-	{
-		auto wallBody3 = PhysicsBody::createBox(Wall3->getContentSize());
-		wallBody3->setDynamic(false);
-		wallBody3->setCollisionBitmask(8);
-		wallBody3->setContactTestBitmask(true);
-
-		Wall3->setPhysicsBody(wallBody3);
-	}
-
-	rootNode->addChild(Wall3);
-
-	Wall4 = (Sprite*)rootNode->getChildByName("Wall4");
-
-	{
-		auto wallBody4 = PhysicsBody::createBox(Wall4->getContentSize());
-		wallBody4->setDynamic(false);
-		wallBody4->setCollisionBitmask(9);
-		wallBody4->setContactTestBitmask(true);
-
-		Wall4->setPhysicsBody(wallBody4);
-	}
-
-	rootNode->addChild(Wall4);
-
 	Spike1 = (Sprite*)rootNode->getChildByName("Spike1");
 
 	{
 		auto spikeBody1 = PhysicsBody::createBox(Spike1->getContentSize());
 		spikeBody1->setDynamic(false);
-		spikeBody1->setCollisionBitmask(10);
+		spikeBody1->setCollisionBitmask(6);
 		spikeBody1->setContactTestBitmask(true);
 
 		Spike1->setPhysicsBody(spikeBody1);
@@ -218,7 +171,7 @@ bool GameScene::init()
 	{
 		auto spikeBody2 = PhysicsBody::createBox(Spike2->getContentSize());
 		spikeBody2->setDynamic(false);
-		spikeBody2->setCollisionBitmask(11);
+		spikeBody2->setCollisionBitmask(7);
 		spikeBody2->setContactTestBitmask(true);
 
 		Spike2->setPhysicsBody(spikeBody2);
@@ -226,90 +179,25 @@ bool GameScene::init()
 
 	rootNode->addChild(Spike2);
 
-	Spike3 = (Sprite*)rootNode->getChildByName("Spike3");
+	SpikeRoof1 = (Sprite*)rootNode->getChildByName("SpikeRoof");
 
 	{
-		auto spikeBody3 = PhysicsBody::createBox(Spike3->getContentSize());
-		spikeBody3->setDynamic(false);
-		spikeBody3->setCollisionBitmask(12);
-		spikeBody3->setContactTestBitmask(true);
+		auto spikeRoofBody1 = PhysicsBody::createBox(SpikeRoof1->getContentSize());
+		spikeRoofBody1->setDynamic(false);
+		spikeRoofBody1->setCollisionBitmask(8);
+		spikeRoofBody1->setContactTestBitmask(true);
 
-		Spike3->setPhysicsBody(spikeBody3);
+		SpikeRoof1->setPhysicsBody(spikeRoofBody1);
 	}
 
-	rootNode->addChild(Spike3);
-
-	SpikeWall1 = (Sprite*)rootNode->getChildByName("SpikeWall1");
-
-	{
-		auto spikeWallBody1 = PhysicsBody::createBox(SpikeWall1->getContentSize());
-		spikeWallBody1->setDynamic(false);
-		spikeWallBody1->setCollisionBitmask(13);
-		spikeWallBody1->setContactTestBitmask(true);
-
-		SpikeWall1->setPhysicsBody(spikeWallBody1);
-	}
-
-	rootNode->addChild(SpikeWall1);
-
-	SpikeWall2 = (Sprite*)rootNode->getChildByName("SpikeWall2");
-
-	{
-		auto spikeWallBody2 = PhysicsBody::createBox(SpikeWall2->getContentSize());
-		spikeWallBody2->setDynamic(false);
-		spikeWallBody2->setCollisionBitmask(14);
-		spikeWallBody2->setContactTestBitmask(true);
-
-		SpikeWall2->setPhysicsBody(spikeWallBody2);
-	}
-
-	rootNode->addChild(SpikeWall2);
-
-	SpikeRoof2 = (Sprite*)rootNode->getChildByName("SpikeRoof2");
-
-	{
-		auto spikeRoofBody2 = PhysicsBody::createBox(SpikeRoof2->getContentSize());
-		spikeRoofBody2->setDynamic(false);
-		spikeRoofBody2->setCollisionBitmask(16);
-		spikeRoofBody2->setContactTestBitmask(true);
-
-		SpikeRoof2->setPhysicsBody(spikeRoofBody2);
-	}
-
-	rootNode->addChild(SpikeRoof2);
-
-	SpikeRoof3 = (Sprite*)rootNode->getChildByName("SpikeRoof3");
-
-	{
-		auto spikeRoofBody3 = PhysicsBody::createBox(SpikeRoof3->getContentSize());
-		spikeRoofBody3->setDynamic(false);
-		spikeRoofBody3->setCollisionBitmask(17);
-		spikeRoofBody3->setContactTestBitmask(true);
-
-		SpikeRoof3->setPhysicsBody(spikeRoofBody3);
-	}
-
-	rootNode->addChild(SpikeRoof3);
-
-	SpikeRoof4 = (Sprite*)rootNode->getChildByName("SpikeRoof4");
-
-	{
-		auto spikeRoofBody4 = PhysicsBody::createBox(SpikeRoof4->getContentSize());
-		spikeRoofBody4->setDynamic(false);
-		spikeRoofBody4->setCollisionBitmask(18);
-		spikeRoofBody4->setContactTestBitmask(true);
-
-		SpikeRoof4->setPhysicsBody(spikeRoofBody4);
-	}
-
-	rootNode->addChild(SpikeRoof4);
+	rootNode->addChild(SpikeRoof1);
 
 	Finish = (Sprite*)rootNode->getChildByName("Finish");
 
 	{
 		auto finishBody = PhysicsBody::createBox(Finish->getContentSize());
 		finishBody->setDynamic(false);
-		finishBody->setCollisionBitmask(19);
+		finishBody->setCollisionBitmask(9);
 		finishBody->setContactTestBitmask(true);
 
 		Finish->setPhysicsBody(finishBody);
@@ -317,6 +205,18 @@ bool GameScene::init()
 
 	rootNode->addChild(Finish);
 
+	Wall1 = (Sprite*)rootNode->getChildByName("Wall");
+
+	{
+		auto wallBody = PhysicsBody::createBox(Wall1->getContentSize());
+		wallBody->setDynamic(false);
+		wallBody->setCollisionBitmask(10);
+		wallBody->setContactTestBitmask(true);
+
+		Wall1->setPhysicsBody(wallBody);
+	}
+
+	rootNode->addChild(Wall1);
 
 	auto contactListener = EventListenerPhysicsContact::create();
 	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
@@ -332,8 +232,16 @@ bool GameScene::init()
 	touchListener->onTouchCancelled = CC_CALLBACK_2(GameScene::onTouchCancelled, this);
 	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
 
-	opposite = false;
+	opposite = true;
 	slingshot = true;
+
+	
+
+	/*auto gameOver = MenuItemImage::create("help Button.png", "Help Button Clicked.png", CC_CALLBACK_1(GameScene::GoToGameOverScene, this));
+	gameOver->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2.4 + origin.y));
+	auto over = Menu::create(gameOver, NULL);
+	over->setPosition(Point::ZERO);
+	this->addChild(over);*/
 	
     return true;
 }
@@ -366,96 +274,48 @@ void GameScene::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
 
-	if (1 == a->getCollisionBitmask() && 19 == b->getCollisionBitmask())
+	if (1 == a->getCollisionBitmask() && 9 == b->getCollisionBitmask())
 	{
-		player->setPosition(Vec2(32.0f, 510.0f));
+		this->removeAllChildren();
+		GameScene::GoToLevelScene();
 		slingshot = true;
 	}
-	else if (19 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+	else if (9 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 	{
-		player->setPosition(Vec2(32.0f, 510.0f));
+		this->removeAllChildren();
+		GameScene::GoToLevelScene();
 		slingshot = true;
 	}
 	else
 	{
-		if (1 == a->getCollisionBitmask() && 10 == b->getCollisionBitmask())
+		if (1 == a->getCollisionBitmask() && 6 == b->getCollisionBitmask())
 		{
-			player->setOpacity(0);
+			GameScene::GoToGameOverScene();
 			slingshot = false;
 		}
-		else if (10 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+		else if (6 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			player->setOpacity(0);
+			GameScene::GoToGameOverScene();
 			slingshot = false;
 		}
-		if (1 == a->getCollisionBitmask() && 11 == b->getCollisionBitmask())
+		if (1 == a->getCollisionBitmask() && 7 == b->getCollisionBitmask())
 		{
-			player->setOpacity(0);
+			GameScene::GoToGameOverScene();
 			slingshot = false;
 		}
-		else if (11 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+		else if (7 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			player->setOpacity(0);
+			GameScene::GoToGameOverScene();
 			slingshot = false;
 		}
-		if (1 == a->getCollisionBitmask() && 12 == b->getCollisionBitmask())
+		if (1 == a->getCollisionBitmask() && 8 == b->getCollisionBitmask())
 		{
-			player->setOpacity(0);
+			GameScene::GoToGameOverScene();
 			slingshot = false;
 		}
-		else if (12 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+		else if (8 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		if (1 == a->getCollisionBitmask() && 13 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		else if (13 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		if (1 == a->getCollisionBitmask() && 14 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		else if (14 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		if (1 == a->getCollisionBitmask() && 16 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		else if (16 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		if (1 == a->getCollisionBitmask() && 17 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		else if (17 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		if (1 == a->getCollisionBitmask() && 18 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
-			slingshot = false;
-		}
-		else if (18 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->setOpacity(0);
+			GameScene::GoToGameOverScene();
 			slingshot = false;
 		}
 		if (1 == a->getCollisionBitmask() && 2 == b->getCollisionBitmask())
@@ -498,50 +358,16 @@ void GameScene::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos
 			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
 			slingshot = true;
 		}
-		if (1 == a->getCollisionBitmask() && 6 == b->getCollisionBitmask())
+		if (1 == a->getCollisionBitmask() && 10 == b->getCollisionBitmask())
 		{
 			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
 			slingshot = true;
 		}
-		else if (6 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+		else if (10 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
 			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
 			slingshot = true;
 		}
-		if (1 == a->getCollisionBitmask() && 7 == b->getCollisionBitmask())
-		{
-			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
-			slingshot = true;
-		}
-		else if (7 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
-			slingshot = true;
-		}
-		if (1 == a->getCollisionBitmask() && 8 == b->getCollisionBitmask())
-		{
-			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
-			slingshot = true;
-		}
-		else if (8 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
-			slingshot = true;
-		}
-		if (1 == a->getCollisionBitmask() && 9 == b->getCollisionBitmask())
-		{
-			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
-			slingshot = true;
-		}
-		else if (9 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
-			slingshot = true;
-		}
-	}
-	if (player->getOpacity() == 0)
-	{
-		player->setPosition(Vec2(1000.0f, 1000.0f));
 	}
 }
 
@@ -592,4 +418,29 @@ void GameScene::onTouchMoved(Touch* touch, Event* event)
 
 void GameScene::onTouchCancelled(Touch* touch, Event* event)
 {
+}
+
+void GameScene::GoToGameOverScene()
+{
+	auto scene = GameOverScene::createScene();
+
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+}
+void GameScene::GoToLevelScene()
+{
+	auto scene = LevelScene::createScene();
+
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+}
+void GameScene::GoToMainMenuScene(cocos2d::Ref *sender)
+{
+	auto scene = HelloWorld::createScene();
+
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+}
+void GameScene::GoToLevel2()
+{
+	auto scene = LevelTwo::createScene();
+
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }

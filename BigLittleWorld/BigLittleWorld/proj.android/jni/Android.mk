@@ -14,8 +14,12 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/HelloWorldScene.cpp \
 				   ../../Classes/HelpScene.cpp \
+				   ../../Classes/HelpSceneSecondPage.cpp \
+				   ../../Classes/HelpSceneThirdPage.cpp \
 				   ../../Classes/LevelScene.cpp \
-				   ../../Classes/Player.cpp \
+				   ../../Classes/LevelComplete.cpp \
+				   ../../Classes/LevelTwo.cpp \
+				   ../../Classes/LevelThree.cpp \
 				   ../../Classes/SplashScene.cpp \
 				   ../../Classes/GameScene.cpp \
 				   ../../Classes/GameOverScene.cpp \

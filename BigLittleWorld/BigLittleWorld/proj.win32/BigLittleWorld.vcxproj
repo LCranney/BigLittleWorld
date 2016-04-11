@@ -154,9 +154,13 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\HelpScene.cpp" />
+    <ClCompile Include="..\Classes\HelpSceneSecondPage.cpp" />
+    <ClCompile Include="..\Classes\HelpSceneThirdPage.cpp" />
+    <ClCompile Include="..\Classes\LevelComplete.cpp" />
     <ClCompile Include="..\Classes\LevelScene.cpp" />
-    <ClCompile Include="..\Classes\Player.cpp" />
     <ClCompile Include="..\Classes\SplashScene.cpp" />
+    <ClCompile Include="LevelThree.cpp" />
+    <ClCompile Include="LevelTwo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -169,9 +173,13 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HelpScene.h" />
+    <ClInclude Include="..\Classes\HelpSceneSecondPage.h" />
+    <ClInclude Include="..\Classes\HelpSceneThirdPage.h" />
+    <ClInclude Include="..\Classes\LevelComplete.h" />
     <ClInclude Include="..\Classes\LevelScene.h" />
-    <ClInclude Include="..\Classes\Player.h" />
     <ClInclude Include="..\Classes\SplashScene.h" />
+    <ClInclude Include="LevelThree.h" />
+    <ClInclude Include="LevelTwo.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

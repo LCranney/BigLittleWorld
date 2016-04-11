@@ -17,8 +17,7 @@ public:
 
 private:
 	void GoToMainMenuScene(cocos2d::Ref *sender);
-	//void GoToGameScene(cocos2d::Ref *sender);
+	void GoToHelpSceneSecondPage(cocos2d::Ref *sender);
 };
 
-#endif // __HELP_SCENE_H__
-
+#endif // __SPLASH_SCENE_H__

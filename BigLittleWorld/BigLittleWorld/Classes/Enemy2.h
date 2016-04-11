@@ -3,7 +3,6 @@
 
 #include "cocos2d.h"
 #include "ui/cocosGUI.h"
-
 #include <stdio.h>
 
 
@@ -25,7 +24,6 @@ private:
 	float       currentSpeed;
 	bool		MovingDown;
 	float		distance;
-
-
+	int movement;
 };
 #endif 

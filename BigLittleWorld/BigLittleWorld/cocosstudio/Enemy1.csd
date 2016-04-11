@@ -6,15 +6,15 @@
       <ObjectData Name="Node" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Enemy1" ActionTag="-2037166612" Tag="2" IconVisible="False" LeftMargin="-32.0000" RightMargin="-32.0000" TopMargin="-32.0000" BottomMargin="-32.0000" ctype="SpriteObjectData">
-            <Size X="64.0000" Y="64.0000" />
+          <AbstractNodeData Name="Enemy1" ActionTag="-2037166612" Tag="2" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+            <Size X="48.0000" Y="48.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
-            <Scale ScaleX="0.2000" ScaleY="0.2000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="green.png" Plist="" />
+            <FileData Type="Normal" Path="Diomond_Enemy.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
