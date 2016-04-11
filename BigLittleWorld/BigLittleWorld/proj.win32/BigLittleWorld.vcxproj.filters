@@ -60,6 +60,7 @@
     <ClCompile Include="LevelTwo.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="LevelFour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -113,6 +114,7 @@
     <ClInclude Include="LevelTwo.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="LevelFour.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

@@ -1,5 +1,5 @@
-#ifndef _LEVEL_THREE_H__
-#define _LEVEL_THREE_H__
+#ifndef _LEVEL_FOUR_H__
+#define _LEVEL_FOUR_H__
 
 #include "cocos2d.h"
 
@@ -7,7 +7,7 @@ class Enemy1;
 class Enemy2;
 class Player;
 
-class LevelThree : public cocos2d::Layer
+class LevelFour : public cocos2d::Layer
 {
 public:
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -17,7 +17,7 @@ public:
 	virtual bool init();
 
 	// implement the "static create()" method manually
-	CREATE_FUNC(LevelThree);
+	CREATE_FUNC(LevelFour);
 
 private:
 	void SetPhysicsWorld(cocos2d::PhysicsWorld *world){ sceneWorld = world; }
@@ -52,6 +52,7 @@ private:
 	cocos2d::Sprite* Wall2;
 	cocos2d::Sprite* Wall3;
 	cocos2d::Sprite* Wall4;
+	cocos2d::Sprite* Wall5;
 	cocos2d::Sprite* Roof1;
 	cocos2d::Sprite* Roof2;
 	cocos2d::Sprite* Roof3;
@@ -62,13 +63,8 @@ private:
 	cocos2d::Sprite* Spike1;
 	cocos2d::Sprite* Spike2;
 	cocos2d::Sprite* Spike3;
-	cocos2d::Sprite* Spike4;
-	cocos2d::Sprite* Spike5;
-	cocos2d::Sprite* Spike6;
-	cocos2d::Sprite* Spike7;
-	cocos2d::Sprite* Spike8;
-	cocos2d::Sprite* Spike9;
-	cocos2d::Sprite* Spike10;
+	cocos2d::Sprite* SpikeWall1;
+	cocos2d::Sprite* SpikeWall2;
 	cocos2d::Sprite* Finish;
 	cocos2d::Sprite* player;
 
@@ -78,11 +74,12 @@ private:
 	void GoToGameOverScene();
 	void GoToLevelScene();
 	void GoToMainMenuScene(cocos2d::Ref *sender);
-	void GoToLevel4();
+	void GoToLevel3();
 
 };
 
 #endif // __SPLASHSCENE_SCENE_H__
+
 
 
 
