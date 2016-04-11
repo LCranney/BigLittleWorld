@@ -61,19 +61,21 @@ bool GameOverScene::init()
 void GameOverScene::GoToLevelScene(cocos2d::Ref *sender)
 {
 	auto scene = LevelScene::createScene();
+	SoundManager::playMusicMenu();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 
 void GameOverScene::GoToGameScene(cocos2d::Ref *sender)
 {
 	auto scene = GameScene::createScene();
+	SoundManager::playMusicGameOne();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 
 void GameOverScene::GoToMainMenuScene(cocos2d::Ref *sender)
 {
 	auto scene = HelloWorld::createScene();
-
+	SoundManager::playMusicMenu();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 

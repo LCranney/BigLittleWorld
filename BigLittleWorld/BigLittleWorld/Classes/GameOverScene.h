@@ -2,6 +2,7 @@
 #define __GAME_OVER_SCENE_H__
 
 #include "cocos2d.h"
+#include "SoundManager.h"
 
 class GameOverScene : public cocos2d::Layer
 {

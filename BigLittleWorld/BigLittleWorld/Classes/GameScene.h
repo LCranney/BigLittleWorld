@@ -2,6 +2,8 @@
 #define __GAME_SCENE_H__
 
 #include "cocos2d.h"
+#include "SoundManager.h"
+#include "SimpleAudioEngine.h"
 
 class Enemy1;
 class Enemy2;

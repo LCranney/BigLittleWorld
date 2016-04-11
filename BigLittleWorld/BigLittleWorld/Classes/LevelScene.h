@@ -2,6 +2,7 @@
 #define __LEVEL_SCENE_H__
 
 #include "cocos2d.h"
+#include "SoundManager.h"
 
 class LevelScene : public cocos2d::Layer
 {

@@ -351,7 +351,7 @@ bool LevelThree::onContactBegin(cocos2d::PhysicsContact &contact)
 {
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
-
+	SoundManager::a_playSFXDeath();
 	//On contact between player and any enemy, spike, or laser. Kill player. Check Lives. Run reset/Game Over.
 
 	return true;
@@ -572,6 +572,7 @@ void LevelThree::onTouchEnded(Touch* touch, Event* event)
 {
 	if (slingshot == true)
 	{
+		SoundManager::a_playSFXMovement();
 		if (opposite == false)
 		{
 			Vec2 endPosition = touch->getLocation();
@@ -602,25 +603,25 @@ void LevelThree::onTouchCancelled(Touch* touch, Event* event)
 void LevelThree::GoToGameOverScene()
 {
 	auto scene = GameOverScene::createScene();
-
+	SoundManager::playMusicMenu();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 void LevelThree::GoToLevelScene()
 {
 	auto scene = LevelScene::createScene();
-
+	SoundManager::playMusicMenu();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 void LevelThree::GoToMainMenuScene(cocos2d::Ref *sender)
 {
 	auto scene = HelloWorld::createScene();
-
+	SoundManager::playMusicMenu();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 void LevelThree::GoToLevel4()
 {
 	auto scene = LevelThree::createScene();
-
+	SoundManager::playMusicGameOne();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 

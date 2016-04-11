@@ -66,6 +66,7 @@ bool HelloWorld::init()
 	level->setPosition(Point::ZERO);
 	this->addChild(level);
 
+	SoundManager::init();
 
 	return true;
 }

@@ -2,6 +2,7 @@
 #define _LEVEL_TWO_H__
 
 #include "cocos2d.h"
+#include "SoundManager.h"
 
 class Enemy1;
 class Enemy2;

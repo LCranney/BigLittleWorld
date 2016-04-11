@@ -366,7 +366,7 @@ bool LevelFour::onContactBegin(cocos2d::PhysicsContact &contact)
 {
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
-
+	SoundManager::a_playSFXDeath();
 	//On contact between player and any enemy, spike, or laser. Kill player. Check Lives. Run reset/Game Over.
 
 	return true;
@@ -599,6 +599,7 @@ void LevelFour::onTouchEnded(Touch* touch, Event* event)
 {
 	if (slingshot == true)
 	{
+		SoundManager::a_playSFXMovement();
 		if (opposite == false)
 		{
 			Vec2 endPosition = touch->getLocation();
@@ -629,19 +630,19 @@ void LevelFour::onTouchCancelled(Touch* touch, Event* event)
 void LevelFour::GoToGameOverScene()
 {
 	auto scene = GameOverScene::createScene();
-
+	SoundManager::playMusicMenu();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 void LevelFour::GoToLevelScene()
 {
 	auto scene = LevelScene::createScene();
-
+	SoundManager::playMusicMenu();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 void LevelFour::GoToMainMenuScene(cocos2d::Ref *sender)
 {
 	auto scene = HelloWorld::createScene();
-
+	SoundManager::playMusicMenu();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 
