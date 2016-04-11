@@ -15,19 +15,13 @@ public:
 	//Base SFX
 	//.wav
 	void i_playSFXMenuClick();
-	void i_playSFXCollectPickup();
-	void i_playSFXKillHostile();
 	void i_playSFXDeath();
 	void i_playSFXStickToWall();
-	void i_playSFXRicochet();
 	void i_playSFXMovement();
 	//.ogg
 	void a_playSFXMenuClick();
-	void a_playSFXCollectPickup();
-	void a_playSFXKillHostile();
 	void a_playSFXDeath();
 	void a_playSFXStickToWall();
-	void a_playSFXRicochet();
 	void a_playSFXMovement();
 	//BONUS FEATURE SOUNDS ADDED BELOW
 
@@ -36,8 +30,6 @@ public:
 	void playMusicMenu();
 	void playMusicGameOne();
 	//BONUS FEATURE MUSIC ADDED BELOW
-
-
 };
 
 //RESEARCH
