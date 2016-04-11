@@ -20,6 +20,7 @@ private:
 	void GoToGameScene(cocos2d::Ref *sender);
 	void GoToLevel2(cocos2d::Ref *sender);
 	void GoToLevel3(cocos2d::Ref *sender);
+	void GoToLevel4(cocos2d::Ref *sender);
 };
 
 #endif // __LEVEL_SCENE_H__

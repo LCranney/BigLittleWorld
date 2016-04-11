@@ -158,6 +158,7 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\HelpSceneThirdPage.cpp" />
     <ClCompile Include="..\Classes\LevelComplete.cpp" />
     <ClCompile Include="..\Classes\LevelScene.cpp" />
+    <ClCompile Include="..\Classes\SoundManager.cpp" />
     <ClCompile Include="..\Classes\SplashScene.cpp" />
     <ClCompile Include="LevelFour.cpp" />
     <ClCompile Include="LevelThree.cpp" />
@@ -178,6 +179,7 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\HelpSceneThirdPage.h" />
     <ClInclude Include="..\Classes\LevelComplete.h" />
     <ClInclude Include="..\Classes\LevelScene.h" />
+    <ClInclude Include="..\Classes\SoundManager.h" />
     <ClInclude Include="..\Classes\SplashScene.h" />
     <ClInclude Include="LevelFour.h" />
     <ClInclude Include="LevelThree.h" />

@@ -60,7 +60,12 @@
     <ClCompile Include="LevelTwo.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="LevelFour.cpp" />
+    <ClCompile Include="LevelFour.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SoundManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -114,7 +119,12 @@
     <ClInclude Include="LevelTwo.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="LevelFour.h" />
+    <ClInclude Include="LevelFour.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SoundManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

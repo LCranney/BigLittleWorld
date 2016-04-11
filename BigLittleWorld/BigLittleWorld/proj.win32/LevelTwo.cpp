@@ -365,13 +365,13 @@ void LevelTwo::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos2
 	if (1 == a->getCollisionBitmask() && 16 == b->getCollisionBitmask())
 	{
 		this->removeAllChildren();
-		LevelTwo::GoToLevelScene();
+		LevelTwo::GoToLevel3();
 		slingshot = true;
 	}
 	else if (16 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 	{
 		this->removeAllChildren();
-		LevelTwo::GoToLevelScene();
+		LevelTwo::GoToLevel3();
 		slingshot = true;
 	}
 	else

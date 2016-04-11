@@ -20,6 +20,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/LevelComplete.cpp \
 				   ../../Classes/LevelTwo.cpp \
 				   ../../Classes/LevelThree.cpp \
+				   ../../Classes/LevelFour.cpp \
 				   ../../Classes/SplashScene.cpp \
 				   ../../Classes/GameScene.cpp \
 				   ../../Classes/GameOverScene.cpp \

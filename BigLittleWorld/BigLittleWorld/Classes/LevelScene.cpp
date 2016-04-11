@@ -6,6 +6,7 @@
 #include "ui/CocosGUI.h"
 #include "LevelTwo.h"
 #include "LevelThree.h"
+#include "LevelFour.h"
 
 USING_NS_CC;
 
@@ -67,7 +68,7 @@ bool LevelScene::init()
 	Level3Button->setPosition(Point::ZERO);
 	this->addChild(Level3Button);
 
-	auto Level4ButtonItem = MenuItemImage::create("Level 4 Button.png", "Level 4 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToGameScene, this));
+	auto Level4ButtonItem = MenuItemImage::create("Level 4 Button.png", "Level 4 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToLevel4, this));
 	Level4ButtonItem->setPosition(Point(visibleSize.width / 1.2 + origin.x, visibleSize.height / 2 + origin.y));
 	auto Level4Button = Menu::create(Level4ButtonItem, NULL);
 	Level4Button->setPosition(Point::ZERO);
@@ -100,6 +101,13 @@ void LevelScene::GoToLevel2(cocos2d::Ref *sender)
 void LevelScene::GoToLevel3(cocos2d::Ref *sender)
 {
 	auto scene = LevelThree::createScene();
+
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+}
+
+void LevelScene::GoToLevel4(cocos2d::Ref *sender)
+{
+	auto scene = LevelFour::createScene();
 
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
