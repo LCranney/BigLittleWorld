@@ -45,10 +45,10 @@ bool GameOverScene::init()
 	//auto retryItem = MenuItemImage::create("Retry Button.png", "Retry Button Pressed.png", CC_CALLBACK_1(GameOverScene::GoToGameScene, this));
 	//retryItem->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 2.7));
 
-	auto mainMenuItem = MenuItemImage::create("Level Button.png", "Level Button Pressed.png", CC_CALLBACK_1(GameOverScene::GoToLevelScene, this));
+	auto mainMenuItem = MenuItemImage::create("LevelButton.png", "LevelButtonClicked.png", CC_CALLBACK_1(GameOverScene::GoToLevelScene, this));
 	mainMenuItem->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 2.7));
 
-	auto home2Item = MenuItemImage::create("Home Button.png", "Home Button Pressed.png", CC_CALLBACK_1(GameOverScene::GoToMainMenuScene, this));
+	auto home2Item = MenuItemImage::create("MenuButton.png", "MenuButtonClicked.png", CC_CALLBACK_1(GameOverScene::GoToMainMenuScene, this));
 	home2Item->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 4.3));
 
 	auto menu = Menu::create(home2Item, mainMenuItem, NULL);

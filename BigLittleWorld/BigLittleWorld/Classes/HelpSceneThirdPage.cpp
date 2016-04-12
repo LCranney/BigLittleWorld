@@ -42,7 +42,7 @@ bool HelpSceneThirdPage::init()
 	backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	this->addChild(backgroundSprite);
 
-	auto homeHelpScene = MenuItemImage::create("Home Button.png", "Home Button Pressed.png", CC_CALLBACK_1(HelpSceneThirdPage::GoToMainMenuScene, this));
+	auto homeHelpScene = MenuItemImage::create("MenuButton.png", "MenuButtonClicked.png", CC_CALLBACK_1(HelpSceneThirdPage::GoToMainMenuScene, this));
 	homeHelpScene->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 5 + origin.y));
 	auto homeHelp = Menu::create(homeHelpScene, NULL);
 	homeHelp->setPosition(Point::ZERO);

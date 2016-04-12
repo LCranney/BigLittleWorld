@@ -41,7 +41,7 @@ bool HelpScene::init()
 	backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	this->addChild(backgroundSprite);
 
-	auto home2Item = MenuItemImage::create("Home Button.png", "Home Button Pressed.png", CC_CALLBACK_1(HelpScene::GoToMainMenuScene, this));
+	auto home2Item = MenuItemImage::create("MenuButton.png", "MenuButtonClicked.png", CC_CALLBACK_1(HelpScene::GoToMainMenuScene, this));
 	home2Item->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 5 + origin.y));
 	auto home2 = Menu::create(home2Item, NULL);
 	home2->setPosition(Point::ZERO);

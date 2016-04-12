@@ -44,31 +44,31 @@ bool LevelScene::init()
 	backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	this->addChild(backgroundSprite);
 
-	auto home1Item = MenuItemImage::create("Home Button.png", "Home Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToMainMenuScene, this));
+	auto home1Item = MenuItemImage::create("MenuButton.png", "MenuButtonClicked.png", CC_CALLBACK_1(LevelScene::GoToMainMenuScene, this));
 	home1Item->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 5 + origin.y));
 	auto home = Menu::create(home1Item, NULL);
 	home->setPosition(Point::ZERO);
 	this->addChild(home);
 
-	auto Level1ButtonItem = MenuItemImage::create("Level 1 Button.png", "Level 1 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToGameScene, this));
+	auto Level1ButtonItem = MenuItemImage::create("Level1_p.png", "Level1Clicked_p.png", CC_CALLBACK_1(LevelScene::GoToGameScene, this));
 	Level1ButtonItem->setPosition(Point(visibleSize.width / 6 + origin.x, visibleSize.height / 2 + origin.y));
 	auto Level1Button = Menu::create(Level1ButtonItem, NULL);
 	Level1Button->setPosition(Point::ZERO);
 	this->addChild(Level1Button);
 
-	auto Level2ButtonItem = MenuItemImage::create("Level 2 Button.png", "Level 2 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToLevel2, this));
+	auto Level2ButtonItem = MenuItemImage::create("Level2_g.png", "Level2Clicked_g.png", CC_CALLBACK_1(LevelScene::GoToLevel2, this));
 	Level2ButtonItem->setPosition(Point(visibleSize.width / 2.6 + origin.x, visibleSize.height / 2 + origin.y));
 	auto Level2Button = Menu::create(Level2ButtonItem, NULL);
 	Level2Button->setPosition(Point::ZERO);
 	this->addChild(Level2Button);
 
-	auto Level3ButtonItem = MenuItemImage::create("Level 3 Button.png", "Level 3 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToLevel3, this));
+	auto Level3ButtonItem = MenuItemImage::create("Level3_b.png", "Level3Clicked_b.png", CC_CALLBACK_1(LevelScene::GoToLevel3, this));
 	Level3ButtonItem->setPosition(Point(visibleSize.width / 1.65 + origin.x, visibleSize.height / 2 + origin.y));
 	auto Level3Button = Menu::create(Level3ButtonItem, NULL);
 	Level3Button->setPosition(Point::ZERO);
 	this->addChild(Level3Button);
 
-	auto Level4ButtonItem = MenuItemImage::create("Level 4 Button.png", "Level 4 Button Pressed.png", CC_CALLBACK_1(LevelScene::GoToLevel4, this));
+	auto Level4ButtonItem = MenuItemImage::create("Level4_p.png", "Level4Clicked_p.png", CC_CALLBACK_1(LevelScene::GoToLevel4, this));
 	Level4ButtonItem->setPosition(Point(visibleSize.width / 1.2 + origin.x, visibleSize.height / 2 + origin.y));
 	auto Level4Button = Menu::create(Level4ButtonItem, NULL);
 	Level4Button->setPosition(Point::ZERO);

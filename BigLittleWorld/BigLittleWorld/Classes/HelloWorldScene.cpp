@@ -48,19 +48,19 @@ bool HelloWorld::init()
 	backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 	this->addChild(backgroundSprite);
 
-	auto playItem = MenuItemImage::create("Start Button.png", "Start Button Clicked.png", CC_CALLBACK_1(HelloWorld::GoToGameScene, this));
+	auto playItem = MenuItemImage::create("StartButton.png", "StartButtonClicked.png", CC_CALLBACK_1(HelloWorld::GoToGameScene, this));
 	playItem->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 2 + origin.y));
 	auto menu = Menu::create(playItem, NULL);
 	menu->setPosition(Point::ZERO);
 	this->addChild(menu);
 
-	auto helpItem = MenuItemImage::create("Help Button.png", "Help Button Pressed.png", CC_CALLBACK_1(HelloWorld::GoToHelpScene, this));
+	auto helpItem = MenuItemImage::create("HelpButton.png", "HelpButtonClicked.png", CC_CALLBACK_1(HelloWorld::GoToHelpScene, this));
 	helpItem->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 5 + origin.y));
 	auto help = Menu::create(helpItem, NULL);
 	help->setPosition(Point::ZERO);
 	this->addChild(help);
 
-	auto levelItem = MenuItemImage::create("Level Button.png", "Level Button Pressed.png", CC_CALLBACK_1(HelloWorld::GoToLevelScene, this));
+	auto levelItem = MenuItemImage::create("LevelButton.png", "LevelButtonClicked.png", CC_CALLBACK_1(HelloWorld::GoToLevelScene, this));
 	levelItem->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 2.85 + origin.y));
 	auto level = Menu::create(levelItem, NULL);
 	level->setPosition(Point::ZERO);
