@@ -1,10 +1,9 @@
-#ifndef __LEVEL_SCENE_H__
-#define __LEVEL_SCENE_H__
+#ifndef __HELLOWORLD_SCENE_H__
+#define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-#include "SoundManager.h"
 
-class LevelScene : public cocos2d::Layer
+class HelloWorld : public cocos2d::Layer
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -14,14 +13,15 @@ public:
     virtual bool init();
 
     // implement the "static create()" method manually
-	CREATE_FUNC(LevelScene);
+	CREATE_FUNC(HelloWorld); 
+
 
 private:
-	void GoToMainMenuScene(cocos2d::Ref *sender);
+
 	void GoToGameScene(cocos2d::Ref *sender);
-	void GoToLevel2(cocos2d::Ref *sender);
-	void GoToLevel3(cocos2d::Ref *sender);
-	void GoToLevel4(cocos2d::Ref *sender);
+	void GoToHelpScene(cocos2d::Ref *sender);
+	void GoToLevelScene(cocos2d::Ref *sender);
+
 };
 
-#endif // __LEVEL_SCENE_H__
+#endif // __HELLOWORLD_SCENE_H__

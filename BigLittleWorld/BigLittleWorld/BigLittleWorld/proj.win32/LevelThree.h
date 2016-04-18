@@ -2,7 +2,6 @@
 #define _LEVEL_THREE_H__
 
 #include "cocos2d.h"
-#include "SoundManager.h"
 
 class Enemy1;
 class Enemy2;

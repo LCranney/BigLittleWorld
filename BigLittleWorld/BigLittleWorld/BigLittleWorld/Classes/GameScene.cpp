@@ -16,7 +16,6 @@ USING_NS_CC;
 using namespace cocostudio::timeline;
 using namespace cocos2d;
 using namespace cocos2d::ui;
-using namespace CocosDenshion;
 
 Scene* GameScene::createScene()
 {
@@ -44,6 +43,7 @@ bool GameScene::init()
     {
         return false;
     }
+
 	auto rootNode = CSLoader::createNode("Level1.csb");
 
 	addChild(rootNode);
@@ -250,7 +250,7 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact)
 {
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
-	SoundManager::a_playSFXDeath();
+
 	//On contact between player and any enemy, spike, or laser. Kill player. Check Lives. Run reset/Game Over.
 
 	return true;
@@ -277,13 +277,13 @@ void GameScene::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos
 	if (1 == a->getCollisionBitmask() && 9 == b->getCollisionBitmask())
 	{
 		this->removeAllChildren();
-		GameScene::GoToLevelScene();
+		GameScene::GoToLevel2();
 		slingshot = true;
 	}
 	else if (9 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 	{
 		this->removeAllChildren();
-		GameScene::GoToLevelScene();
+		GameScene::GoToLevel2();
 		slingshot = true;
 	}
 	else
@@ -393,7 +393,6 @@ void GameScene::onTouchEnded(Touch* touch, Event* event)
 {
 	if (slingshot == true)
 	{
-		SoundManager::a_playSFXMovement();
 		if (opposite == false)
 		{
 			Vec2 endPosition = touch->getLocation();
@@ -423,26 +422,25 @@ void GameScene::onTouchCancelled(Touch* touch, Event* event)
 
 void GameScene::GoToGameOverScene()
 {
-//	SoundManager::KillSound();
 	auto scene = GameOverScene::createScene();
-	SoundManager::playMusicMenu();
+
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 void GameScene::GoToLevelScene()
 {
 	auto scene = LevelScene::createScene();
-	SoundManager::playMusicMenu();
+
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 void GameScene::GoToMainMenuScene(cocos2d::Ref *sender)
 {
 	auto scene = HelloWorld::createScene();
-	SoundManager::playMusicMenu();
+
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 void GameScene::GoToLevel2()
 {
 	auto scene = LevelTwo::createScene();
-	SoundManager::playMusicGameOne();
+
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }

@@ -2,7 +2,6 @@
 #define __GAME_OVER_SCENE_H__
 
 #include "cocos2d.h"
-#include "SoundManager.h"
 
 class GameOverScene : public cocos2d::Layer
 {
@@ -15,6 +14,8 @@ public:
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameOverScene);
+
+	int level;
 
 private:
 	void GoToLevelScene(cocos2d::Ref *sender);

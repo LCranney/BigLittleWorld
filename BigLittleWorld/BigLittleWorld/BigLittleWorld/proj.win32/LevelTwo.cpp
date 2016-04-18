@@ -1,4 +1,4 @@
-#include "LevelFour.h"
+#include "LevelTwo.h"
 #include "Definitions.h"
 #include "GameOverScene.h"
 #include "HelloWorldScene.h"
@@ -8,6 +8,7 @@
 #include "Enemy1.h"
 #include "Enemy2.h"
 #include "Enemy3.h"
+#include "LevelThree.h"
 #include <iostream>
 
 USING_NS_CC;
@@ -16,14 +17,14 @@ using namespace cocostudio::timeline;
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
-Scene* LevelFour::createScene()
+Scene* LevelTwo::createScene()
 {
 	// 'scene' is an autorelease object
 	auto scene = Scene::createWithPhysics();
 	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 	scene->getPhysicsWorld()->setGravity(Vec2(0, -1000));
 	// 'layer' is an autorelease object
-	auto layer = LevelFour::create();
+	auto layer = LevelTwo::create();
 	layer->SetPhysicsWorld(scene->getPhysicsWorld());
 
 	// add layer as a child to scene
@@ -34,7 +35,7 @@ Scene* LevelFour::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool LevelFour::init()
+bool LevelTwo::init()
 {
 	//////////////////////////////
 	// 1. super init first
@@ -43,14 +44,14 @@ bool LevelFour::init()
 		return false;
 	}
 
-	auto rootNode = CSLoader::createNode("Level4.csb");
+	auto rootNode = CSLoader::createNode("Level2.csb");
 
 	addChild(rootNode);
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto homeButtonGame = MenuItemImage::create("GameSceneHomeButton.png", "GameSceneHomeButton 1.png", CC_CALLBACK_1(LevelFour::GoToMainMenuScene, this));
+	auto homeButtonGame = MenuItemImage::create("GameSceneHomeButton.png", "GameSceneHomeButton 1.png", CC_CALLBACK_1(LevelTwo::GoToMainMenuScene, this));
 	homeButtonGame->setPosition(Point(visibleSize.width / 1.1 + origin.x, visibleSize.height / 2 + origin.y));
 	auto homeButton = Menu::create(homeButtonGame, NULL);
 	homeButton->setPosition(Point::ZERO);
@@ -80,8 +81,6 @@ bool LevelFour::init()
 	}
 
 	rootNode->addChild(player);
-
-
 
 	/*{
 
@@ -141,77 +140,64 @@ bool LevelFour::init()
 
 	rootNode->addChild(Floor3);
 
-	Roof = (Sprite*)rootNode->getChildByName("Roof");
+	Floor4 = (Sprite*)rootNode->getChildByName("Floor4");
 
 	{
-		auto roofBody = PhysicsBody::createBox(Roof->getContentSize());
-		roofBody->setDynamic(false);
-		roofBody->setCollisionBitmask(5);
-		roofBody->setContactTestBitmask(true);
+		auto floorBody4 = PhysicsBody::createBox(Floor4->getContentSize());
+		floorBody4->setDynamic(false);
+		floorBody4->setCollisionBitmask(5);
+		floorBody4->setContactTestBitmask(true);
 
-		Roof->setPhysicsBody(roofBody);
+		Floor4->setPhysicsBody(floorBody4);
 	}
 
-	rootNode->addChild(Roof);
+	rootNode->addChild(Floor4);
 
-	Wall1 = (Sprite*)rootNode->getChildByName("Wall1");
+	Roof1 = (Sprite*)rootNode->getChildByName("Roof1");
 
 	{
-		auto wallBody1 = PhysicsBody::createBox(Wall1->getContentSize());
-		wallBody1->setDynamic(false);
-		wallBody1->setCollisionBitmask(6);
-		wallBody1->setContactTestBitmask(true);
+		auto roofBody1 = PhysicsBody::createBox(Roof1->getContentSize());
+		roofBody1->setDynamic(false);
+		roofBody1->setCollisionBitmask(6);
+		roofBody1->setContactTestBitmask(true);
 
-		Wall1->setPhysicsBody(wallBody1);
+		Roof1->setPhysicsBody(roofBody1);
 	}
 
-	rootNode->addChild(Wall1);
+	rootNode->addChild(Roof1);
 
-	Wall2 = (Sprite*)rootNode->getChildByName("Wall2");
+	Roof2 = (Sprite*)rootNode->getChildByName("Roof2");
 
 	{
-		auto wallBody2 = PhysicsBody::createBox(Wall2->getContentSize());
-		wallBody2->setDynamic(false);
-		wallBody2->setCollisionBitmask(7);
-		wallBody2->setContactTestBitmask(true);
+		auto roofBody2 = PhysicsBody::createBox(Roof2->getContentSize());
+		roofBody2->setDynamic(false);
+		roofBody2->setCollisionBitmask(7);
+		roofBody2->setContactTestBitmask(true);
 
-		Wall2->setPhysicsBody(wallBody2);
+		Roof2->setPhysicsBody(roofBody2);
 	}
 
-	rootNode->addChild(Wall2);
+	rootNode->addChild(Roof2);
 
-	Wall3 = (Sprite*)rootNode->getChildByName("Wall3");
+	Roof3 = (Sprite*)rootNode->getChildByName("Roof3");
 
 	{
-		auto wallBody3 = PhysicsBody::createBox(Wall3->getContentSize());
-		wallBody3->setDynamic(false);
-		wallBody3->setCollisionBitmask(8);
-		wallBody3->setContactTestBitmask(true);
+		auto roofBody3 = PhysicsBody::createBox(Roof3->getContentSize());
+		roofBody3->setDynamic(false);
+		roofBody3->setCollisionBitmask(8);
+		roofBody3->setContactTestBitmask(true);
 
-		Wall3->setPhysicsBody(wallBody3);
+		Roof3->setPhysicsBody(roofBody3);
 	}
 
-	rootNode->addChild(Wall3);
-
-	Wall4 = (Sprite*)rootNode->getChildByName("Wall4");
-
-	{
-		auto wallBody4 = PhysicsBody::createBox(Wall4->getContentSize());
-		wallBody4->setDynamic(false);
-		wallBody4->setCollisionBitmask(9);
-		wallBody4->setContactTestBitmask(true);
-
-		Wall4->setPhysicsBody(wallBody4);
-	}
-
-	rootNode->addChild(Wall4);
+	rootNode->addChild(Roof3);
 
 	Spike1 = (Sprite*)rootNode->getChildByName("Spike1");
 
 	{
 		auto spikeBody1 = PhysicsBody::createBox(Spike1->getContentSize());
 		spikeBody1->setDynamic(false);
-		spikeBody1->setCollisionBitmask(10);
+		spikeBody1->setCollisionBitmask(9);
 		spikeBody1->setContactTestBitmask(true);
 
 		Spike1->setPhysicsBody(spikeBody1);
@@ -224,7 +210,7 @@ bool LevelFour::init()
 	{
 		auto spikeBody2 = PhysicsBody::createBox(Spike2->getContentSize());
 		spikeBody2->setDynamic(false);
-		spikeBody2->setCollisionBitmask(11);
+		spikeBody2->setCollisionBitmask(10);
 		spikeBody2->setContactTestBitmask(true);
 
 		Spike2->setPhysicsBody(spikeBody2);
@@ -237,7 +223,7 @@ bool LevelFour::init()
 	{
 		auto spikeBody3 = PhysicsBody::createBox(Spike3->getContentSize());
 		spikeBody3->setDynamic(false);
-		spikeBody3->setCollisionBitmask(12);
+		spikeBody3->setCollisionBitmask(11);
 		spikeBody3->setContactTestBitmask(true);
 
 		Spike3->setPhysicsBody(spikeBody3);
@@ -245,38 +231,25 @@ bool LevelFour::init()
 
 	rootNode->addChild(Spike3);
 
-	SpikeWall1 = (Sprite*)rootNode->getChildByName("SpikeWall1");
+	SpikeRoof1 = (Sprite*)rootNode->getChildByName("SpikeRoof1");
 
 	{
-		auto spikeWallBody1 = PhysicsBody::createBox(SpikeWall1->getContentSize());
-		spikeWallBody1->setDynamic(false);
-		spikeWallBody1->setCollisionBitmask(13);
-		spikeWallBody1->setContactTestBitmask(true);
+		auto spikeRoofBody1 = PhysicsBody::createBox(SpikeRoof1->getContentSize());
+		spikeRoofBody1->setDynamic(false);
+		spikeRoofBody1->setCollisionBitmask(12);
+		spikeRoofBody1->setContactTestBitmask(true);
 
-		SpikeWall1->setPhysicsBody(spikeWallBody1);
+		SpikeRoof1->setPhysicsBody(spikeRoofBody1);
 	}
 
-	rootNode->addChild(SpikeWall1);
-
-	SpikeWall2 = (Sprite*)rootNode->getChildByName("SpikeWall2");
-
-	{
-		auto spikeWallBody2 = PhysicsBody::createBox(SpikeWall2->getContentSize());
-		spikeWallBody2->setDynamic(false);
-		spikeWallBody2->setCollisionBitmask(14);
-		spikeWallBody2->setContactTestBitmask(true);
-
-		SpikeWall2->setPhysicsBody(spikeWallBody2);
-	}
-
-	rootNode->addChild(SpikeWall2);
+	rootNode->addChild(SpikeRoof1);
 
 	SpikeRoof2 = (Sprite*)rootNode->getChildByName("SpikeRoof2");
 
 	{
 		auto spikeRoofBody2 = PhysicsBody::createBox(SpikeRoof2->getContentSize());
 		spikeRoofBody2->setDynamic(false);
-		spikeRoofBody2->setCollisionBitmask(15);
+		spikeRoofBody2->setCollisionBitmask(13);
 		spikeRoofBody2->setContactTestBitmask(true);
 
 		SpikeRoof2->setPhysicsBody(spikeRoofBody2);
@@ -289,7 +262,7 @@ bool LevelFour::init()
 	{
 		auto spikeRoofBody3 = PhysicsBody::createBox(SpikeRoof3->getContentSize());
 		spikeRoofBody3->setDynamic(false);
-		spikeRoofBody3->setCollisionBitmask(16);
+		spikeRoofBody3->setCollisionBitmask(14);
 		spikeRoofBody3->setContactTestBitmask(true);
 
 		SpikeRoof3->setPhysicsBody(spikeRoofBody3);
@@ -302,7 +275,7 @@ bool LevelFour::init()
 	{
 		auto spikeRoofBody4 = PhysicsBody::createBox(SpikeRoof4->getContentSize());
 		spikeRoofBody4->setDynamic(false);
-		spikeRoofBody4->setCollisionBitmask(17);
+		spikeRoofBody4->setCollisionBitmask(15);
 		spikeRoofBody4->setContactTestBitmask(true);
 
 		SpikeRoof4->setPhysicsBody(spikeRoofBody4);
@@ -315,7 +288,7 @@ bool LevelFour::init()
 	{
 		auto finishBody = PhysicsBody::createBox(Finish->getContentSize());
 		finishBody->setDynamic(false);
-		finishBody->setCollisionBitmask(19);
+		finishBody->setCollisionBitmask(16);
 		finishBody->setContactTestBitmask(true);
 
 		Finish->setPhysicsBody(finishBody);
@@ -323,37 +296,36 @@ bool LevelFour::init()
 
 	rootNode->addChild(Finish);
 
-	Wall5 = (Sprite*)rootNode->getChildByName("Wall5");
-
+	Wall1 = (Sprite*)rootNode->getChildByName("Wall");
 	{
-		auto wallBody5 = PhysicsBody::createBox(Wall5->getContentSize());
-		wallBody5->setDynamic(false);
-		wallBody5->setCollisionBitmask(15);
-		wallBody5->setContactTestBitmask(true);
+		auto wallBody = PhysicsBody::createBox(Wall1->getContentSize());
+		wallBody->setDynamic(false);
+		wallBody->setCollisionBitmask(17);
+		wallBody->setContactTestBitmask(true);
 
-		Wall5->setPhysicsBody(wallBody5);
+		Wall1->setPhysicsBody(wallBody);
 	}
 
-	rootNode->addChild(Wall5);
+	rootNode->addChild(Wall1);
 
 	auto contactListener = EventListenerPhysicsContact::create();
-	contactListener->onContactBegin = CC_CALLBACK_1(LevelFour::onContactBegin, this);
-	contactListener->onContactPreSolve = CC_CALLBACK_2(LevelFour::onContactPreSolve, this);
-	contactListener->onContactPostSolve = CC_CALLBACK_2(LevelFour::onContactPostSolve, this);
-	contactListener->onContactSeparate = CC_CALLBACK_1(LevelFour::onContactSeperate, this);
+	contactListener->onContactBegin = CC_CALLBACK_1(LevelTwo::onContactBegin, this);
+	contactListener->onContactPreSolve = CC_CALLBACK_2(LevelTwo::onContactPreSolve, this);
+	contactListener->onContactPostSolve = CC_CALLBACK_2(LevelTwo::onContactPostSolve, this);
+	contactListener->onContactSeparate = CC_CALLBACK_1(LevelTwo::onContactSeperate, this);
 	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
 
 	auto touchListener = EventListenerTouchOneByOne::create();
-	touchListener->onTouchBegan = CC_CALLBACK_2(LevelFour::onTouchBegan, this);
-	touchListener->onTouchEnded = CC_CALLBACK_2(LevelFour::onTouchEnded, this);
-	touchListener->onTouchMoved = CC_CALLBACK_2(LevelFour::onTouchMoved, this);
-	touchListener->onTouchCancelled = CC_CALLBACK_2(LevelFour::onTouchCancelled, this);
+	touchListener->onTouchBegan = CC_CALLBACK_2(LevelTwo::onTouchBegan, this);
+	touchListener->onTouchEnded = CC_CALLBACK_2(LevelTwo::onTouchEnded, this);
+	touchListener->onTouchMoved = CC_CALLBACK_2(LevelTwo::onTouchMoved, this);
+	touchListener->onTouchCancelled = CC_CALLBACK_2(LevelTwo::onTouchCancelled, this);
 	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
 
 	opposite = false;
 	slingshot = true;
 
-	/*auto gameOver = MenuItemImage::create("help Button.png", "Help Button Clicked.png", CC_CALLBACK_1(LevelFour::GoToGameOverScene, this));
+	/*auto gameOver = MenuItemImage::create("help Button.png", "Help Button Clicked.png", CC_CALLBACK_1(LevelTwo::GoToGameOverScene, this));
 	gameOver->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2.4 + origin.y));
 	auto over = Menu::create(gameOver, NULL);
 	over->setPosition(Point::ZERO);
@@ -362,17 +334,17 @@ bool LevelFour::init()
 	return true;
 }
 
-bool LevelFour::onContactBegin(cocos2d::PhysicsContact &contact)
+bool LevelTwo::onContactBegin(cocos2d::PhysicsContact &contact)
 {
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
-	SoundManager::a_playSFXDeath();
+
 	//On contact between player and any enemy, spike, or laser. Kill player. Check Lives. Run reset/Game Over.
 
 	return true;
 }
 
-bool LevelFour::onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::PhysicsContactPreSolve& solve)
+bool LevelTwo::onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::PhysicsContactPreSolve& solve)
 {
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
@@ -385,103 +357,93 @@ bool LevelFour::onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::Phy
 	return true;
 }
 
-void LevelFour::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos2d::PhysicsContactPostSolve& solve)
+void LevelTwo::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos2d::PhysicsContactPostSolve& solve)
 {
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
 
-	if (1 == a->getCollisionBitmask() && 19 == b->getCollisionBitmask())
+	if (1 == a->getCollisionBitmask() && 16 == b->getCollisionBitmask())
 	{
 		this->removeAllChildren();
-		LevelFour::GoToLevelScene();
+		LevelTwo::GoToLevel3();
 		slingshot = true;
 	}
-	else if (19 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+	else if (16 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 	{
 		this->removeAllChildren();
-		LevelFour::GoToLevelScene();
+		LevelTwo::GoToLevel3();
 		slingshot = true;
 	}
 	else
 	{
+		if (1 == a->getCollisionBitmask() && 9 == b->getCollisionBitmask())
+		{
+			LevelTwo::GoToGameOverScene();
+			slingshot = false;
+		}
+		else if (9 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+		{
+			LevelTwo::GoToGameOverScene();
+			slingshot = false;
+		}
 		if (1 == a->getCollisionBitmask() && 10 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		else if (10 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		if (1 == a->getCollisionBitmask() && 11 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		else if (11 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		if (1 == a->getCollisionBitmask() && 12 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		else if (12 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		if (1 == a->getCollisionBitmask() && 13 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		else if (13 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		if (1 == a->getCollisionBitmask() && 14 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		else if (14 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
-		if (1 == a->getCollisionBitmask() && 16 == b->getCollisionBitmask())
+		if (1 == a->getCollisionBitmask() && 15 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
-		else if (16 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+		else if (15 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
-			LevelFour::GoToGameOverScene();
-			slingshot = false;
-		}
-		if (1 == a->getCollisionBitmask() && 17 == b->getCollisionBitmask())
-		{
-			LevelFour::GoToGameOverScene();
-			slingshot = false;
-		}
-		else if (17 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			LevelFour::GoToGameOverScene();
-			slingshot = false;
-		}
-		if (1 == a->getCollisionBitmask() && 18 == b->getCollisionBitmask())
-		{
-			LevelFour::GoToGameOverScene();
-			slingshot = false;
-		}
-		else if (18 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			LevelFour::GoToGameOverScene();
+			LevelTwo::GoToGameOverScene();
 			slingshot = false;
 		}
 		if (1 == a->getCollisionBitmask() && 2 == b->getCollisionBitmask())
@@ -554,22 +516,12 @@ void LevelFour::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos
 			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
 			slingshot = true;
 		}
-		if (1 == a->getCollisionBitmask() && 9 == b->getCollisionBitmask())
+		if (1 == a->getCollisionBitmask() && 17 == b->getCollisionBitmask())
 		{
 			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
 			slingshot = true;
 		}
-		else if (9 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
-		{
-			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
-			slingshot = true;
-		}
-		if (1 == a->getCollisionBitmask() && 15 == b->getCollisionBitmask())
-		{
-			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
-			slingshot = true;
-		}
-		else if (15 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
+		else if (17 == a->getCollisionBitmask() && 1 == b->getCollisionBitmask())
 		{
 			player->getPhysicsBody()->setVelocity(Vec2(0.0f, 0.0f));
 			slingshot = true;
@@ -577,7 +529,7 @@ void LevelFour::onContactPostSolve(cocos2d::PhysicsContact &contact, const cocos
 	}
 }
 
-void LevelFour::onContactSeperate(cocos2d::PhysicsContact &contact)
+void LevelTwo::onContactSeperate(cocos2d::PhysicsContact &contact)
 {
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
@@ -588,18 +540,17 @@ void LevelFour::onContactSeperate(cocos2d::PhysicsContact &contact)
 	}
 }
 
-bool LevelFour::onTouchBegan(Touch* touch, Event* event)
+bool LevelTwo::onTouchBegan(Touch* touch, Event* event)
 {
 	startPosition = touch->getLocation();
 
 	return true;
 }
 
-void LevelFour::onTouchEnded(Touch* touch, Event* event)
+void LevelTwo::onTouchEnded(Touch* touch, Event* event)
 {
 	if (slingshot == true)
 	{
-		SoundManager::a_playSFXMovement();
 		if (opposite == false)
 		{
 			Vec2 endPosition = touch->getLocation();
@@ -619,32 +570,35 @@ void LevelFour::onTouchEnded(Touch* touch, Event* event)
 	}
 }
 
-void LevelFour::onTouchMoved(Touch* touch, Event* event)
+void LevelTwo::onTouchMoved(Touch* touch, Event* event)
 {
 }
 
-void LevelFour::onTouchCancelled(Touch* touch, Event* event)
+void LevelTwo::onTouchCancelled(Touch* touch, Event* event)
 {
 }
 
-void LevelFour::GoToGameOverScene()
+void LevelTwo::GoToGameOverScene()
 {
 	auto scene = GameOverScene::createScene();
-	SoundManager::playMusicMenu();
+
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
-void LevelFour::GoToLevelScene()
+void LevelTwo::GoToLevelScene()
 {
 	auto scene = LevelScene::createScene();
-	SoundManager::playMusicMenu();
+
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
-void LevelFour::GoToMainMenuScene(cocos2d::Ref *sender)
+void LevelTwo::GoToMainMenuScene(cocos2d::Ref *sender)
 {
 	auto scene = HelloWorld::createScene();
-	SoundManager::playMusicMenu();
+
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
+void LevelTwo::GoToLevel3()
+{
+	auto scene = LevelThree::createScene();
 
-
-
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+}

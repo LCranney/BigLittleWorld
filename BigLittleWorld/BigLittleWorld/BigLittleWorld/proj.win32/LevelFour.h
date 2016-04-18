@@ -1,25 +1,23 @@
-#ifndef __GAME_SCENE_H__
-#define __GAME_SCENE_H__
+#ifndef _LEVEL_FOUR_H__
+#define _LEVEL_FOUR_H__
 
 #include "cocos2d.h"
-#include "SoundManager.h"
-#include "SimpleAudioEngine.h"
 
 class Enemy1;
 class Enemy2;
 class Player;
 
-class GameScene : public cocos2d::Layer
+class LevelFour : public cocos2d::Layer
 {
 public:
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
-    static cocos2d::Scene* createScene();
+	// there's no 'id' in cpp, so we recommend returning the class instance pointer
+	static cocos2d::Scene* createScene();
 
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();
+	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+	virtual bool init();
 
-    // implement the "static create()" method manually
-	CREATE_FUNC(GameScene);
+	// implement the "static create()" method manually
+	CREATE_FUNC(LevelFour);
 
 private:
 	void SetPhysicsWorld(cocos2d::PhysicsWorld *world){ sceneWorld = world; }
@@ -49,11 +47,15 @@ private:
 	cocos2d::Sprite* Floor1;
 	cocos2d::Sprite* Floor2;
 	cocos2d::Sprite* Floor3;
+	cocos2d::Sprite* Floor4;
 	cocos2d::Sprite* Wall1;
 	cocos2d::Sprite* Wall2;
 	cocos2d::Sprite* Wall3;
 	cocos2d::Sprite* Wall4;
+	cocos2d::Sprite* Wall5;
 	cocos2d::Sprite* Roof;
+	cocos2d::Sprite* Roof2;
+	cocos2d::Sprite* Roof3;
 	cocos2d::Sprite* SpikeRoof1;
 	cocos2d::Sprite* SpikeRoof2;
 	cocos2d::Sprite* SpikeRoof3;
@@ -72,8 +74,13 @@ private:
 	void GoToGameOverScene();
 	void GoToLevelScene();
 	void GoToMainMenuScene(cocos2d::Ref *sender);
-	void GoToLevel2();
 
 };
 
 #endif // __SPLASHSCENE_SCENE_H__
+
+
+
+
+
+
