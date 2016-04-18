@@ -1,7 +1,7 @@
-#include "GameOverScene.h"
+#include "GameOver2.h"
 #include "HelloWorldScene.h"
 #include "LevelScene.h"
-#include "GameScene.h"
+#include "LevelTwo.h"
 #include "Definitions.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
@@ -10,13 +10,13 @@ USING_NS_CC;
 
 using namespace cocostudio::timeline;
 
-Scene* GameOverScene::createScene()
+Scene* GameOver2::createScene()
 {
 	// 'scene' is an autorelease object
 	auto scene = Scene::create();
 
 	// 'layer' is an autorelease object
-	auto layer = GameOverScene::create();
+	auto layer = GameOver2::create();
 
 	// add layer as a child to scene
 	scene->addChild(layer);
@@ -26,7 +26,7 @@ Scene* GameOverScene::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool GameOverScene::init()
+bool GameOver2::init()
 {
 	//////////////////////////////
 	// 1. super init first
@@ -45,10 +45,11 @@ bool GameOverScene::init()
 	//auto retryItem = MenuItemImage::create("Retry Button.png", "Retry Button Pressed.png", CC_CALLBACK_1(GameOverScene::GoToGameScene, this));
 	//retryItem->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 2.7));
 
-	auto mainMenuItem = MenuItemImage::create("Level Button.png", "Level Button Pressed.png", CC_CALLBACK_1(GameOverScene::GoToLevelScene, this));
+	auto mainMenuItem = MenuItemImage::create("Retry Button.png", "Retry Button Pressed.png", CC_CALLBACK_1(GameOver2::GoToLevel2, this));
 	mainMenuItem->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 2.7));
 
-	auto home2Item = MenuItemImage::create("Home Button.png", "Home Button Pressed.png", CC_CALLBACK_1(GameOverScene::GoToMainMenuScene, this));
+
+	auto home2Item = MenuItemImage::create("Home Button.png", "Home Button Pressed.png", CC_CALLBACK_1(GameOver2::GoToMainMenuScene, this));
 	home2Item->setPosition(Point(visibleSize.width / 2.05 + origin.x, visibleSize.height / 4.3));
 
 	auto menu = Menu::create(home2Item, mainMenuItem, NULL);
@@ -58,22 +59,23 @@ bool GameOverScene::init()
 	return true;
 }
 
-void GameOverScene::GoToLevelScene(cocos2d::Ref *sender)
+void GameOver2::GoToLevelScene(cocos2d::Ref *sender)
 {
 	auto scene = LevelScene::createScene();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 
-void GameOverScene::GoToGameScene(cocos2d::Ref *sender)
+void GameOver2::GoToLevel2(cocos2d::Ref *sender)
 {
-	auto scene = GameScene::createScene();
+	auto scene = LevelTwo::createScene();
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 
-void GameOverScene::GoToMainMenuScene(cocos2d::Ref *sender)
+void GameOver2::GoToMainMenuScene(cocos2d::Ref *sender)
 {
 	auto scene = HelloWorld::createScene();
 
 	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
+
 

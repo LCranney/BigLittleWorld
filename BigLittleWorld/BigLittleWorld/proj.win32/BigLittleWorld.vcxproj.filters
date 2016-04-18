@@ -66,6 +66,15 @@
     <ClCompile Include="..\Classes\SoundManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="GameOver2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver3.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver4.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -123,6 +132,15 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SoundManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver4.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver2.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver3.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

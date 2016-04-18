@@ -160,6 +160,9 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\LevelScene.cpp" />
     <ClCompile Include="..\Classes\SoundManager.cpp" />
     <ClCompile Include="..\Classes\SplashScene.cpp" />
+    <ClCompile Include="GameOver2.cpp" />
+    <ClCompile Include="GameOver3.cpp" />
+    <ClCompile Include="GameOver4.cpp" />
     <ClCompile Include="LevelFour.cpp" />
     <ClCompile Include="LevelThree.cpp" />
     <ClCompile Include="LevelTwo.cpp" />
@@ -181,6 +184,9 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\LevelScene.h" />
     <ClInclude Include="..\Classes\SoundManager.h" />
     <ClInclude Include="..\Classes\SplashScene.h" />
+    <ClInclude Include="GameOver2.h" />
+    <ClInclude Include="GameOver3.h" />
+    <ClInclude Include="GameOver4.h" />
     <ClInclude Include="LevelFour.h" />
     <ClInclude Include="LevelThree.h" />
     <ClInclude Include="LevelTwo.h" />
